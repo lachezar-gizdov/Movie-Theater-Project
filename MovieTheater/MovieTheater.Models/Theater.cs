@@ -1,0 +1,9 @@
+﻿namespace MovieTheater.Models
+{
+    public class Theater
+    {
+        public int Id { get; set; }
+
+        public int Seats { get; set; }
+    }
+}
