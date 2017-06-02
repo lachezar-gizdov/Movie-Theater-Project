@@ -5,9 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.CLI", "MovieTheater.CLI\MovieTheater.CLI.csproj", "{59DD24AA-33FF-422C-9587-F718807C00D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Framework", "MovieTheater.Framework\MovieTheater.Framework.csproj", "{9E1F5226-C7E4-4F0C-AC3D-D354F72A1BF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Data", "MovieTheater.Framework\MovieTheater.Data.csproj", "{9E1F5226-C7E4-4F0C-AC3D-D354F72A1BF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Tests", "MovieTheater.Tests\MovieTheater.Tests.csproj", "{1E6E7E28-7F61-4DA3-81CD-F8394E62A20F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Models", "MovieTheater.Models\MovieTheater.Models.csproj", "{4A3F1DBC-795E-4A4B-AD58-6BD94C739462}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1E6E7E28-7F61-4DA3-81CD-F8394E62A20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E6E7E28-7F61-4DA3-81CD-F8394E62A20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E6E7E28-7F61-4DA3-81CD-F8394E62A20F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3F1DBC-795E-4A4B-AD58-6BD94C739462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3F1DBC-795E-4A4B-AD58-6BD94C739462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3F1DBC-795E-4A4B-AD58-6BD94C739462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3F1DBC-795E-4A4B-AD58-6BD94C739462}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

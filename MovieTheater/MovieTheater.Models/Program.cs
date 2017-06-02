@@ -1,4 +1,4 @@
-﻿namespace MovieTheater.Data
+﻿namespace MovieTheater.Models
 {
     public class Program
     {
