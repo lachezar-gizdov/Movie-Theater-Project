@@ -16,6 +16,8 @@ namespace MovieTheater.Models
 
         public string LastName { get; set; }
 
+        public virtual Theater Theater { get; set; }
+
         public virtual ICollection<Ticket> PurchasedTickets
         {
             get

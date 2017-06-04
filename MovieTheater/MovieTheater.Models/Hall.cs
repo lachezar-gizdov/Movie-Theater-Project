@@ -11,5 +11,7 @@
         public HallShedules HallShedule { get; set; }
 
         public virtual Ticket Ticket { get; set; }
+
+        public virtual Theater Theater { get; set; }
     }
 }

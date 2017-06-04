@@ -6,16 +6,18 @@ namespace MovieTheater.Models
     {
         private ICollection<User> users;
         private ICollection<Movie> movies;
+        private ICollection<Hall> halls;
 
         public Theater()
         {
             this.Users = new HashSet<User>();
             this.Movies = new HashSet<Movie>();
+            this.Halls = new HashSet<Hall>();
         }
 
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string TheaterName { get; set; }
 
         public virtual ICollection<User> Users
         {
@@ -41,5 +43,7 @@ namespace MovieTheater.Models
                 this.movies = value;
             }
         }
+
+        public virtual ICollection<Hall> Halls { get; set; }
     }
 }
