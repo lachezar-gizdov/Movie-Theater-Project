@@ -9,8 +9,8 @@ namespace MovieTheater.Models
 
         public Theater()
         {
-            this.users = new HashSet<User>();
-            this.movies = new HashSet<Movie>();
+            this.Users = new HashSet<User>();
+            this.Movies = new HashSet<Movie>();
         }
 
         public int Id { get; set; }
