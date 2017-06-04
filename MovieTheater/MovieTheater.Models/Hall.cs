@@ -9,5 +9,7 @@
         public int Seats { get; set; }
 
         public HallShedules HallShedule { get; set; }
+
+        public virtual Ticket Ticket { get; set; }
     }
 }

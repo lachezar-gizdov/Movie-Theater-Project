@@ -1,10 +1,26 @@
-﻿namespace MovieTheater.Models
+﻿using System.Collections.Generic;
+
+namespace MovieTheater.Models
 {
     public class Ticket
     {
+        private ICollection<Hall> hall;
+
+
         public int Id { get; set; }
 
-        public string Hall { get; set; }
+        public virtual ICollection<Hall> Hall
+        {
+            get
+            {
+                return this.hall;
+            }
+
+            private set
+            {
+                this.hall = value;
+            }
+        }
 
         public string MovieTitle { get; set; }
 
