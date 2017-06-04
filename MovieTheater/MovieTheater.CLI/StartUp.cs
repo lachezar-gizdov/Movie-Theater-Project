@@ -12,10 +12,10 @@ namespace MovieTheater.CLI
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
             var data = new MovieTheaterDbContext();
 
-            var theater = new Theater() { Seats = 10};
+            //var theater = new Theater() { Seats = 10};
 
-            data.Theaters.Add(theater);
-            data.SaveChanges();
+            //data.Theaters.Add(theater);
+            //data.SaveChanges();
         }
     }
 }
