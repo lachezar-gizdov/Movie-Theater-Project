@@ -9,5 +9,7 @@ namespace MovieTheater.Models
         public string MovieName { get; set; }
 
         public DateTime ProjectionTime { get; set; }
+
+        public virtual Hall Hall { get; set; }
     }
 }

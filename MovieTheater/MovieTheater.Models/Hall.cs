@@ -4,11 +4,11 @@
     {
         public int Id { get; set; }
 
-        public int Number { get; set; }
+        public int HallNumber { get; set; }
 
         public int Seats { get; set; }
 
-        public HallShedules HallShedule { get; set; }
+        public virtual HallShedules HallShedule { get; set; }
 
         public virtual Ticket Ticket { get; set; }
 
