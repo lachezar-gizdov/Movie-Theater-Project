@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieTheater.Models
 {
-    class HallShedule
+    class HallShedules
     {
     }
 }

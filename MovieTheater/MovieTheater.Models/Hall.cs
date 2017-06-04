@@ -8,6 +8,6 @@
 
         public int Seats { get; set; }
 
-        public HallShedule HallShedule { get; set; }
+        public HallShedules HallShedule { get; set; }
     }
 }
