@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MovieTheater.Framework")]
+[assembly: AssemblyTitle("MovieTheater.Data1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MovieTheater.Framework")]
+[assembly: AssemblyProduct("MovieTheater.Data1")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9e1f5226-c7e4-4f0c-ac3d-d354f72a1bf5")]
+[assembly: Guid("63a8eba4-8b4f-4775-b923-90aae530f89e")]
 
 // Version information for an assembly consists of the following four values:
 //
