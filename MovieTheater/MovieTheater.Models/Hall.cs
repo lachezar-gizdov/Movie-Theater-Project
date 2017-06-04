@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace MovieTheater.Models
 {
-    class Hall
+    public class Hall
     {
+        public int MyProperty { get; set; }
+
+
+
+
+
+
     }
 }
