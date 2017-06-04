@@ -6,7 +6,6 @@ namespace MovieTheater.Models
     {
         private ICollection<Hall> hall;
 
-
         public int Id { get; set; }
 
         public virtual ICollection<Hall> Hall

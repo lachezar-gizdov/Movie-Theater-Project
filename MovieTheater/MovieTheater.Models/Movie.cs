@@ -9,7 +9,5 @@
         public short Year { get; set; }
 
         public virtual Theater Theater { get; set; }
-
-
     }
 }
