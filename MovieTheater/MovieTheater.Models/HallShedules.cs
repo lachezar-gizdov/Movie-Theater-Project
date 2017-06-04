@@ -10,6 +10,5 @@ namespace MovieTheater.Models
 
         public DateTime ProjectionTime { get; set; }
 
-        public virtual Hall Hall { get; set; }
     }
 }
