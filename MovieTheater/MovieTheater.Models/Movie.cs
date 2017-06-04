@@ -7,5 +7,7 @@
         public string Name { get; set; }
 
         public short Year { get; set; }
+
+        public virtual Theater Theater { get; set; }
     }
 }
