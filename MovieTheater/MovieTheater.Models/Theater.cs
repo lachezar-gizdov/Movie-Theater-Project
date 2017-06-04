@@ -25,6 +25,7 @@ namespace MovieTheater.Models
             {
                 return this.users;
             }
+
             set
             {
                 this.users = value;
@@ -44,6 +45,17 @@ namespace MovieTheater.Models
             }
         }
 
-        public virtual ICollection<Hall> Halls { get; set; }
+        public virtual ICollection<Hall> Halls
+        {
+            get
+            {
+                return this.halls;
+            }
+
+            set
+            {
+                this.halls = value;
+            }
+        }
     }
 }

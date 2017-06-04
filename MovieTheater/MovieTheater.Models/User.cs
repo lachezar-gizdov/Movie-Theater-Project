@@ -10,6 +10,7 @@ namespace MovieTheater.Models
         {
             this.purchasedTickets = new HashSet<Ticket>();
         }
+
         public int Id { get; set; }
 
         public string FirstName { get; set; }
