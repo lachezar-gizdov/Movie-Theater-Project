@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hall.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
