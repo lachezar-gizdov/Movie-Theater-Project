@@ -49,6 +49,11 @@
     <Compile Include="Core\Commands\CommandsFactory.cs" />
     <Compile Include="Core\Commands\Contracts\ICommand.cs" />
     <Compile Include="Core\Commands\Contracts\ICommandsFactory.cs" />
+    <Compile Include="Core\Commands\CreateHallCommand.cs" />
+    <Compile Include="Core\Commands\CreateMovieCommand.cs" />
+    <Compile Include="Core\Commands\CreateTheaterCommand.cs" />
+    <Compile Include="Core\Commands\CreateTicketCommand.cs" />
+    <Compile Include="Core\Commands\CreateUserCommand.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
     <Compile Include="Core\Contracts\IReader.cs" />
     <Compile Include="Core\Contracts\IWriter.cs" />
@@ -69,7 +74,12 @@
     <Compile Include="Models\Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MovieTheater.Data\MovieTheater.Data.csproj">
+      <Project>{63A8EBA4-8B4F-4775-B923-90AAE530F89E}</Project>
+      <Name>MovieTheater.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
