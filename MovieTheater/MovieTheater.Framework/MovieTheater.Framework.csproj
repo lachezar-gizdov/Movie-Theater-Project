@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,13 +44,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\CommandParser.cs" />
+    <Compile Include="Common\Contracts\IParser.cs" />
+    <Compile Include="Core\Commands\CommandsFactory.cs" />
+    <Compile Include="Core\Commands\Contracts\ICommand.cs" />
+    <Compile Include="Core\Commands\Contracts\ICommandsFactory.cs" />
+    <Compile Include="Core\Contracts\IEngine.cs" />
+    <Compile Include="Core\Contracts\IReader.cs" />
+    <Compile Include="Core\Contracts\IWriter.cs" />
     <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\Providers\ConsoleReader.cs" />
+    <Compile Include="Core\Providers\ConsoleWriter.cs" />
+    <Compile Include="Models\Contracts\IUser.cs" />
+    <Compile Include="Models\Contracts\IModelsFactory.cs" />
+    <Compile Include="Models\Contracts\IHall.cs" />
+    <Compile Include="Models\Contracts\ITicket.cs" />
+    <Compile Include="Models\Contracts\IMovie.cs" />
+    <Compile Include="Models\Contracts\ITheater.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\ModelsFactory.cs" />
+    <Compile Include="Models\Hall.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Core\Commands\" />
-    <Folder Include="Core\Contracts\" />
-    <Folder Include="Core\Providers\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
