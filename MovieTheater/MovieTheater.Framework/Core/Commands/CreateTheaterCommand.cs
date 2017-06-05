@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Data;
+using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Models;
 
 namespace MovieTheater.Framework.Core.Commands

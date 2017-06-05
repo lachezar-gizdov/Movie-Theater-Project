@@ -46,9 +46,10 @@ namespace MovieTheater.Models
             {
                 return this.price;
             }
+
             private set
             {
-                if(value <= 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("The price cannot be zero or negative!");
                 }

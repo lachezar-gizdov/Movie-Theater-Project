@@ -4,6 +4,5 @@ namespace MovieTheater.Framework.Models
 {
     public class User : IUser
     {
-
     }
 }

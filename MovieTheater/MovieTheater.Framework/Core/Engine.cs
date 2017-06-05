@@ -1,7 +1,7 @@
-﻿using Bytes2you.Validation;
+﻿using System;
+using Bytes2you.Validation;
 using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core.Contracts;
-using System;
 
 namespace MovieTheater.Framework.Core
 {
@@ -27,22 +27,23 @@ namespace MovieTheater.Framework.Core
         {
             while (true)
             {
-                var fullCommand = reader.Read();
+                var fullCommand = this.reader.Read();
 
                 if (fullCommand.ToLower() == "exit")
                 {
-                    writer.Write("Program terminated.");
+                    this.writer.Write("Program terminated.");
+
                     break;
                 }
 
                 try
                 {
                     var executionResult = this.commandParser.Process(fullCommand);
-                    writer.Write(executionResult);
+                    this.writer.Write(executionResult);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    this.writer.Write(ex.Message);
                 }
             }
         }

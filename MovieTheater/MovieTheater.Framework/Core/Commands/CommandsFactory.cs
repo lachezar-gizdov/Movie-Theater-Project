@@ -1,7 +1,7 @@
-﻿using MovieTheater.Data;
+﻿using System;
+using MovieTheater.Data;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Models;
-using System;
 
 namespace MovieTheater.Framework.Core.Commands
 {
@@ -22,7 +22,7 @@ namespace MovieTheater.Framework.Core.Commands
 
             switch (command)
             {
-                //case "createtheater": return new CreateProjectCommand(this.dbContext, this.factory);
+                // case "createtheater": return new CreateProjectCommand(this.dbContext, this.factory);
                 default: throw new ArgumentException("The passed command is not valid!");
             }
         }

@@ -1,5 +1,5 @@
-﻿using MovieTheater.Framework.Core.Contracts;
-using System;
+﻿using System;
+using MovieTheater.Framework.Core.Contracts;
 
 namespace MovieTheater.Framework.Core.Providers
 {

@@ -1,7 +1,7 @@
-﻿using MovieTheater.Framework.Common.Contracts;
-using MovieTheater.Framework.Core.Commands;
-using System;
+﻿using System;
 using System.Linq;
+using MovieTheater.Framework.Common.Contracts;
+using MovieTheater.Framework.Core.Commands;
 
 namespace MovieTheater.Framework.Common
 {
