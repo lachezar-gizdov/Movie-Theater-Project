@@ -1,12 +1,11 @@
 ﻿using System.Data.Entity;
 using MovieTheater.Data;
 using MovieTheater.Data.Migrations;
-using MovieTheater.Models;
 using MovieTheater.Framework.Core.Providers;
-using MovieTheater.Framework.Models;
 using MovieTheater.Framework.Core.Commands;
 using MovieTheater.Framework.Common;
 using MovieTheater.Framework.Core;
+using MovieTheater.Models.Factory;
 
 namespace MovieTheater.CLI
 {

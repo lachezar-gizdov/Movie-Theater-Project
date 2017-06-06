@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using MovieTheater.Data;
 using MovieTheater.Framework.Core.Commands.Contracts;
-using MovieTheater.Framework.Models;
+using MovieTheater.Models.Factory;
 using System;
 using System.Linq;
 
@@ -26,7 +26,8 @@ namespace MovieTheater.Framework.Core.Commands
             }
 
             var theater = this.factory.CreateTheater(parameters[0]);
-            // this.dbContext.Theaters.Add(theater); //FIX ME
+            this.dbContext.Theaters.Add(theater);
+            dbContext.SaveChanges();
 
             return "Successfully created a new Theater!";
         }

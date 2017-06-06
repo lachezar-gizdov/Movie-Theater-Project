@@ -1,7 +1,7 @@
 ﻿using System;
 using MovieTheater.Data;
 using MovieTheater.Framework.Core.Commands.Contracts;
-using MovieTheater.Framework.Models;
+using MovieTheater.Models.Factory;
 
 namespace MovieTheater.Framework.Core.Commands
 {

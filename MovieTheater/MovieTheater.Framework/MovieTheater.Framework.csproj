@@ -61,24 +61,16 @@
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Core\Providers\ConsoleReader.cs" />
     <Compile Include="Core\Providers\ConsoleWriter.cs" />
-    <Compile Include="Models\Contracts\IUser.cs" />
-    <Compile Include="Models\Contracts\IModelsFactory.cs" />
-    <Compile Include="Models\Contracts\IHall.cs" />
-    <Compile Include="Models\Contracts\ITicket.cs" />
-    <Compile Include="Models\Contracts\IMovie.cs" />
-    <Compile Include="Models\Contracts\ITheater.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\Ticket.cs" />
-    <Compile Include="Models\ModelsFactory.cs" />
-    <Compile Include="Models\Hall.cs" />
-    <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MovieTheater.Data\MovieTheater.Data.csproj">
       <Project>{63A8EBA4-8B4F-4775-B923-90AAE530F89E}</Project>
       <Name>MovieTheater.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieTheater.Models\MovieTheater.Models.csproj">
+      <Project>{fede053f-76c6-4409-b2c2-931ef235e416}</Project>
+      <Name>MovieTheater.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

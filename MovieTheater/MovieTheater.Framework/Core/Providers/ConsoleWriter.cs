@@ -7,7 +7,7 @@ namespace MovieTheater.Framework.Core.Providers
     {
         public void Write(string message)
         {
-            Console.Write(message);
+            Console.WriteLine(message);
         }
     }
 }
