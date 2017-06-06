@@ -25,7 +25,7 @@ namespace MovieTheater.Framework.Core.Commands
                 throw new Exception("Some of the passed parameters are empty!");
             }
 
-            var theater = this.factory.CreateTheater(parameters[0]);
+            var theater = this.factory.CreateTheater(parameters[0], parameters[1]);
             this.dbContext.Theaters.Add(theater);
             dbContext.SaveChanges();
 

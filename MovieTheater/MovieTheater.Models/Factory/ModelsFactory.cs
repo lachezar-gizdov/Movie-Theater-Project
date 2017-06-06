@@ -2,9 +2,9 @@
 {
     public class ModelsFactory
     {
-        public Theater CreateTheater(string theaterName)
+        public Theater CreateTheater(string theaterName, string cityName)
         {
-            Theater theater = new Theater() { TheaterName = theaterName };
+            Theater theater = new Theater() { TheaterName = theaterName, CityName = cityName };
 
             return theater;
         }
@@ -30,9 +30,9 @@
             return ticket;
         }
 
-        public User CreateUser()
+        public User CreateUser(string fName, string lName)
         {
-            User user = new User();
+            User user = new User() { FirstName = fName, LastName = lName};
 
             return user;
         }

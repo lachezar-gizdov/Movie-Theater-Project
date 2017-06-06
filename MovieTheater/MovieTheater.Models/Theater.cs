@@ -19,6 +19,8 @@ namespace MovieTheater.Models
 
         public string TheaterName { get; set; }
 
+        public virtual string CityName { get; set; }
+
         public virtual ICollection<User> Users
         {
             get

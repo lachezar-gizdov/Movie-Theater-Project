@@ -22,8 +22,12 @@ namespace MovieTheater.Framework.Core.Commands
 
             switch (command)
             {
-                case "createtheater": return new CreateTheaterCommand(this.dbContext, this.factory);
-                default: throw new ArgumentException("The passed command is not valid!");
+                case "createtheater":
+                    return new CreateTheaterCommand(this.dbContext, this.factory);
+                case "createuser": // Currently not working?
+                    return new CreateUserCommand(this.dbContext, this.factory);
+                default:
+                    throw new ArgumentException("The passed command is not valid!");
             }
         }
     }
