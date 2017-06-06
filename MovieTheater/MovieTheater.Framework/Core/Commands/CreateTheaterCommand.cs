@@ -26,7 +26,7 @@ namespace MovieTheater.Framework.Core.Commands
             }
 
             var theater = this.factory.CreateTheater(parameters[0]);
-            this.dbContext.Theaters.Add(theater);
+            // this.dbContext.Theaters.Add(theater); //FIX ME
 
             return "Successfully created a new Theater!";
         }
