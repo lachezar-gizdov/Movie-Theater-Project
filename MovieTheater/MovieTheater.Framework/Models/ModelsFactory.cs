@@ -4,9 +4,9 @@ namespace MovieTheater.Framework.Models
 {
     public class ModelsFactory : IModelsFactory
     {
-        public ITheater CreateTheater()
+        public ITheater CreateTheater(string theaterName)
         {
-            ITheater theater = new Theater();
+            ITheater theater = new Theater(theaterName);
 
             return theater;
         }

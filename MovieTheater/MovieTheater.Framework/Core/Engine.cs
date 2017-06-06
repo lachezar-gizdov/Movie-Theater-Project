@@ -7,6 +7,8 @@ namespace MovieTheater.Framework.Core
 {
     public class Engine : IEngine
     {
+        private const string CommandParserCheck = "Engine Parser provider";
+
         private IParser commandParser;
         private IReader reader;
         private IWriter writer;

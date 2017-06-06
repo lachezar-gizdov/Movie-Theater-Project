@@ -2,6 +2,11 @@
 using MovieTheater.Data;
 using MovieTheater.Data.Migrations;
 using MovieTheater.Models;
+using MovieTheater.Framework.Core.Providers;
+using MovieTheater.Framework.Models;
+using MovieTheater.Framework.Core.Commands;
+using MovieTheater.Framework.Common;
+using MovieTheater.Framework.Core;
 
 namespace MovieTheater.CLI
 {
@@ -11,15 +16,15 @@ namespace MovieTheater.CLI
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
             var data = new MovieTheaterDbContext();
-            var theater = new Theater() { TheaterName = "Kino" };
-            var movie = new Movie() { Name = "Movie Name", Year = 2017, Theater = theater };
-            var user = new User() { FirstName = "fname", LastName = "lname", Theater = theater };
 
-            data.Theaters.Add(theater);
-            data.Users.Add(user);
-            data.Movies.Add(movie);
+            var reader = new ConsoleReader();
+            var writer = new ConsoleWriter();
+            var modelsFactory = new ModelsFactory();
+            var commandsFactory = new CommandsFactory(data, modelsFactory);
+            var commandParser = new CommandParser(commandsFactory);
+            var engine = new Engine(commandParser, reader, writer);
 
-            data.SaveChanges();
+            engine.Start();
         }
     }
 }

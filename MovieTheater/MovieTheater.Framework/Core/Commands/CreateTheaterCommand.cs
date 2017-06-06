@@ -2,6 +2,8 @@
 using MovieTheater.Data;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Models;
+using System;
+using System.Linq;
 
 namespace MovieTheater.Framework.Core.Commands
 {
@@ -18,6 +20,14 @@ namespace MovieTheater.Framework.Core.Commands
 
         public string Execute(List<string> parameters)
         {
+            if (parameters.Any(x => x == string.Empty))
+            {
+                throw new Exception("Some of the passed parameters are empty!");
+            }
+
+            var theater = this.factory.CreateTheater(parameters[0]);
+            this.dbContext.Theaters.Add(theater);
+
             return "Successfully created a new Theater!";
         }
     }

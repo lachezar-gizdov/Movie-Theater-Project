@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MovieTheater.CLI</RootNamespace>
     <AssemblyName>MovieTheater.CLI</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\MovieTheater.Data\MovieTheater.Data.csproj">
       <Project>{63A8EBA4-8B4F-4775-B923-90AAE530F89E}</Project>
       <Name>MovieTheater.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieTheater.Framework\MovieTheater.Framework.csproj">
+      <Project>{4b9586a1-d208-4c77-9100-e937f9f6da83}</Project>
+      <Name>MovieTheater.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\MovieTheater.Models\MovieTheater.Models.csproj">
       <Project>{FEDE053F-76C6-4409-B2C2-931EF235E416}</Project>
