@@ -20,6 +20,8 @@ namespace MovieTheater.Models
         [Required]
         public string LastName { get; set; }
 
+        public City City { get; set; }
+
         public virtual Theater Theater { get; set; }
 
         public virtual ICollection<Ticket> PurchasedTickets
