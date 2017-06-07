@@ -2,9 +2,9 @@
 {
     public class ModelsFactory
     {
-        public Theater CreateTheater(string theaterName, string cityName)
+        public Theater CreateTheater(string theaterName, City city)
         {
-            Theater theater = new Theater() { TheaterName = theaterName, CityName = cityName };
+            Theater theater = new Theater() { Name = theaterName, City = city };
 
             return theater;
         }

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MovieTheater.Models
 {
@@ -17,9 +19,11 @@ namespace MovieTheater.Models
 
         public int Id { get; set; }
 
-        public string TheaterName { get; set; }
+        [Required]
+        public string Name { get; set; }
 
-        public virtual string CityName { get; set; }
+        [Required]
+        public virtual City City { get; set; }
 
         public virtual ICollection<User> Users
         {

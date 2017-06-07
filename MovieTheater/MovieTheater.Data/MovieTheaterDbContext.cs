@@ -12,6 +12,8 @@ namespace MovieTheater.Data
 
         public IDbSet<Theater> Theaters { get; set; }
 
+        public IDbSet<City> Cities { get; set; }
+
         public IDbSet<User> Users { get; set; }
 
         public IDbSet<Movie> Movies { get; set; }
