@@ -26,7 +26,12 @@ namespace MovieTheater.Framework.Core.Commands
                 throw new Exception("Some of the passed parameters are empty!");
             }
 
-            var city1 = dbContext.Cities.FirstOrDefault(c => c.Name == parameters[2]);
+            //var city = dbContext.Cities.Where(c => c.Name == parameters[2]).FirstOrDefault();
+
+            //if (city == null)
+            //{
+            //    city = new City() { Name = parameters[2] };
+            //}
 
             var city = new City() { Name = parameters[2] };
             var theater = new Theater() { Name = parameters[3], City = city };
