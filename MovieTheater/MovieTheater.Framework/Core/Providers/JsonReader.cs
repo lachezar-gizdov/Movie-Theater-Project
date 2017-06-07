@@ -1,4 +1,4 @@
-﻿using MovieTheater.Framework.Core.Contracts;
+﻿using MovieTheater.Framework.Core.Providers.Contracts;
 using System.IO;
 
 namespace MovieTheater.Framework.Core.Providers
