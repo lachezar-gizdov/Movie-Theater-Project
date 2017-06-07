@@ -28,7 +28,7 @@ namespace MovieTheater.Framework.Core.Commands
             var user = this.factory.CreateUser(parameters[0], parameters[1]);
             this.dbContext.Users.Add(user);
             dbContext.SaveChanges();
-
+            
             return "Successfully created a new User!";
         }
     }

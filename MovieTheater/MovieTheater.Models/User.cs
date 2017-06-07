@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieTheater.Models
 {
@@ -13,8 +14,10 @@ namespace MovieTheater.Models
 
         public int Id { get; set; }
 
+        [Required]
         public string FirstName { get; set; }
 
+        [Required]
         public string LastName { get; set; }
 
         public virtual Theater Theater { get; set; }
