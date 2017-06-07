@@ -47,10 +47,12 @@
   <ItemGroup>
     <Compile Include="Common\CommandParser.cs" />
     <Compile Include="Common\Contracts\IParser.cs" />
+    <Compile Include="Common\JsonParser.cs" />
     <Compile Include="Core\Commands\CommandsFactory.cs" />
     <Compile Include="Core\Commands\Contracts\ICommand.cs" />
     <Compile Include="Core\Commands\Contracts\ICommandsFactory.cs" />
     <Compile Include="Core\Commands\CreateHallCommand.cs" />
+    <Compile Include="Core\Commands\CreateJsonReaderCommand.cs" />
     <Compile Include="Core\Commands\CreateMovieCommand.cs" />
     <Compile Include="Core\Commands\CreateTheaterCommand.cs" />
     <Compile Include="Core\Commands\CreateTicketCommand.cs" />
