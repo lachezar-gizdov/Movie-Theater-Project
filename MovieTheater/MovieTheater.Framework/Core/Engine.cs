@@ -2,6 +2,7 @@
 using Bytes2you.Validation;
 using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core.Contracts;
+using MovieTheater.Framework.Core.Providers.Contracts;
 
 namespace MovieTheater.Framework.Core
 {

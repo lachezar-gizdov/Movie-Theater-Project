@@ -20,7 +20,7 @@ namespace MovieTheater.Models
         [Required]
         public string LastName { get; set; }
 
-        public City City { get; set; }
+        public virtual City City { get; set; }
 
         public virtual Theater Theater { get; set; }
 

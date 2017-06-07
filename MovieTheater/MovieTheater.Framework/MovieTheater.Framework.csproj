@@ -56,8 +56,8 @@
     <Compile Include="Core\Commands\CreateTicketCommand.cs" />
     <Compile Include="Core\Commands\CreateUserCommand.cs" />
     <Compile Include="Core\Contracts\IEngine.cs" />
-    <Compile Include="Core\Contracts\IReader.cs" />
-    <Compile Include="Core\Contracts\IWriter.cs" />
+    <Compile Include="Core\Providers\Contracts\IReader.cs" />
+    <Compile Include="Core\Providers\Contracts\IWriter.cs" />
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Core\Providers\ConsoleReader.cs" />
     <Compile Include="Core\Providers\ConsoleWriter.cs" />

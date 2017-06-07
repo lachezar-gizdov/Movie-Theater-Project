@@ -1,4 +1,6 @@
-﻿namespace MovieTheater.Models.Factory
+﻿using MovieTheater.Models;
+
+namespace MovieTheater.Models.Factory
 {
     public class ModelsFactory
     {
@@ -30,9 +32,9 @@
             return ticket;
         }
 
-        public User CreateUser(string fName, string lName)
+        public User CreateUser(string fName, string lName, City city, Theater theater)
         {
-            User user = new User() { FirstName = fName, LastName = lName};
+            User user = new User() { FirstName = fName, LastName = lName, City = city, Theater = theater};
 
             return user;
         }

@@ -1,4 +1,4 @@
-﻿namespace MovieTheater.Framework.Core.Contracts
+﻿namespace MovieTheater.Framework.Core.Providers.Contracts
 {
     public interface IWriter
     {
