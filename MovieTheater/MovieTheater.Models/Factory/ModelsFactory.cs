@@ -1,8 +1,8 @@
-﻿using MovieTheater.Models;
+﻿using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Models.Factory
 {
-    public class ModelsFactory
+    public class ModelsFactory : IModelsFactory
     {
         public Theater CreateTheater(string theaterName, City city)
         {

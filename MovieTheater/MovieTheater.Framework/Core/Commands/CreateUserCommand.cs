@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Data;
-using MovieTheater.Models.Factory;
 using System.Linq;
 using MovieTheater.Models;
+using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
     public class CreateUserCommand : ICommand
     {
         private MovieTheaterDbContext dbContext;
-        private ModelsFactory factory;
+        private IModelsFactory factory;
 
-        public CreateUserCommand(MovieTheaterDbContext dbContext, ModelsFactory factory)
+        public CreateUserCommand(MovieTheaterDbContext dbContext, IModelsFactory factory)
         {
             this.dbContext = dbContext;
             this.factory = factory;

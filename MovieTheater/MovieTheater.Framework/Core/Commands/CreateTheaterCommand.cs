@@ -5,15 +5,16 @@ using MovieTheater.Models.Factory;
 using System;
 using System.Linq;
 using MovieTheater.Models;
+using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
     public class CreateTheaterCommand : ICommand
     {
         private MovieTheaterDbContext dbContext;
-        private ModelsFactory factory;
+        private IModelsFactory factory;
 
-        public CreateTheaterCommand(MovieTheaterDbContext dbContext, ModelsFactory factory)
+        public CreateTheaterCommand(MovieTheaterDbContext dbContext, IModelsFactory factory)
         {
             this.dbContext = dbContext;
             this.factory = factory;

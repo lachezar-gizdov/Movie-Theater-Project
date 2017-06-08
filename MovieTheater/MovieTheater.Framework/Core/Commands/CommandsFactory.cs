@@ -2,15 +2,16 @@
 using MovieTheater.Data;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Models.Factory;
+using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
     public class CommandsFactory : ICommandsFactory
     {
         private MovieTheaterDbContext dbContext;
-        private ModelsFactory factory;
+        private IModelsFactory factory;
 
-        public CommandsFactory(MovieTheaterDbContext dbContext, ModelsFactory factory)
+        public CommandsFactory(MovieTheaterDbContext dbContext, IModelsFactory factory)
         {
             this.dbContext = dbContext;
             this.factory = factory;
