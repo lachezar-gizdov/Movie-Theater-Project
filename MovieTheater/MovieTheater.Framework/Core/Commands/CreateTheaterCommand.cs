@@ -9,8 +9,8 @@ namespace MovieTheater.Framework.Core.Commands
 {
     public class CreateTheaterCommand : ICommand
     {
-        private MovieTheaterDbContext dbContext;
-        private IModelsFactory factory;
+        private readonly MovieTheaterDbContext dbContext;
+        private readonly IModelsFactory factory;
 
         public CreateTheaterCommand(MovieTheaterDbContext dbContext, IModelsFactory factory)
         {
