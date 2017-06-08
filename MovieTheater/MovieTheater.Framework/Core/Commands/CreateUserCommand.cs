@@ -26,20 +26,23 @@ namespace MovieTheater.Framework.Core.Commands
                 throw new Exception("Some of the passed parameters are empty!");
             }
 
-            // var city = dbContext.Cities.Where(c => c.Name == parameters[2]).FirstOrDefault();
 
-            // if (city == null)
-            // {
-            //    city = new City() { Name = parameters[2] };
-            // }
-            var city = new City() { Name = parameters[2] };
-            var theater = new Theater() { Name = parameters[3], City = city };
+            var cityName = parameters[2];
+            var theaterName = parameters[3];
+            var city = dbContext.Cities.FirstOrDefault(c => c.Name == cityName);
+
+            if (city == null)
+            {
+                city = this.factory.CreateCity(cityName);
+            }
+
+            var theater = dbContext.Theaters.FirstOrDefault(t => t.Name == theaterName);
 
             var user = this.factory.CreateUser(parameters[0], parameters[1], city, theater);
             this.dbContext.Users.Add(user);
             this.dbContext.SaveChanges();
-            
-            return "Successfully created a new User!";
+
+            return $"Successfully created a new User with ID {user.Id}!";
         }
     }
 }

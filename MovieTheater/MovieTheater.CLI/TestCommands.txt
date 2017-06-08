@@ -1,0 +1,4 @@
+﻿createtheater Arena Sofia
+createtheater CinemaCity Sofia
+createtheater Arena Varna
+createuser Pesho Peshev Sofia Arena
