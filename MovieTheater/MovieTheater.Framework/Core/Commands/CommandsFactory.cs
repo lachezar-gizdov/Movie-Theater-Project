@@ -12,8 +12,9 @@ namespace MovieTheater.Framework.Core.Commands
         private readonly MovieTheaterDbContext dbContext;
         private readonly IModelsFactory factory;
         private readonly IExporter exporter;
+        private IFileReaderFactory fileReaderFactory;
 
-        public CommandsFactory(MovieTheaterDbContext dbContext, IModelsFactory factory, IExporter exporter)
+        public CommandsFactory(MovieTheaterDbContext dbContext, IModelsFactory factory, IExporter exporter, IFileReaderFactory fileReaderFactory)
         {
             Guard.WhenArgument(dbContext, "dbContext").IsNull().Throw();
             Guard.WhenArgument(factory, "Models Factory").IsNull().Throw();
@@ -21,6 +22,7 @@ namespace MovieTheater.Framework.Core.Commands
             this.dbContext = dbContext;
             this.factory = factory;
             this.exporter = exporter;
+            this.fileReaderFactory = fileReaderFactory;
         }
 
         public ICommand CreateCommandFromString(string commandName)
@@ -35,6 +37,8 @@ namespace MovieTheater.Framework.Core.Commands
                     return new CreateUserCommand(this.dbContext, this.factory);
                 case "createpdfreport":
                     return new CreatePdfReportCommand(this.dbContext, this.exporter);
+                case "readfromjson":
+                    return new CreateJsonReaderCommand(fileReaderFactory);
                 default:
                     throw new ArgumentException("The passed command is not valid!");
             }

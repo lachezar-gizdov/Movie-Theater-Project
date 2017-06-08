@@ -9,14 +9,10 @@ namespace MovieTheater.Framework.Core.Commands
     public class CreateJsonReaderCommand : ICommand
     {
         private IFileReaderFactory fileReaderFactory;
-        private IReader reader;
-        private IWriter writer;
 
-        public CreateJsonReaderCommand(IFileReaderFactory fileReader, IReader reader, IWriter writer)
+        public CreateJsonReaderCommand(IFileReaderFactory fileReader)
         {
-            this.fileReaderFactory = fileReader;
-            this.reader = reader;
-            this.writer = writer;
+            this.fileReaderFactory = fileReader;           
         }
 
         public string Execute(List<string> parameters)

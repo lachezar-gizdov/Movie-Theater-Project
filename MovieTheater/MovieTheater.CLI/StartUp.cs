@@ -20,7 +20,8 @@ namespace MovieTheater.CLI
             var writer = new ConsoleWriter();
             var pdfExporter = new PdfExporter();
             var modelsFactory = new ModelsFactory();
-            var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter);
+            var fileReaderFactory = new FileReaderFactory(reader,writer);
+            var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter, fileReaderFactory);
             var commandParser = new CommandParser(commandsFactory);
             var engine = new Engine(commandParser, reader, writer);
 
