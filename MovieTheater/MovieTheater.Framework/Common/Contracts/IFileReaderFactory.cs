@@ -4,6 +4,6 @@ namespace MovieTheater.Framework.Common.Contracts
 {
     public interface IFileReaderFactory
     {
-        string CreateJsonReader(IReader reader, IWriter writer);
+        string CreateJsonReader();
     }
 }

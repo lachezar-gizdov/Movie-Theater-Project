@@ -21,7 +21,7 @@ namespace MovieTheater.Framework.Core.Commands
 
         public string Execute(List<string> parameters)
         {
-            var jsonReader = this.fileReaderFactory.CreateJsonReader(this.reader, this.writer);
+            var jsonReader = this.fileReaderFactory.CreateJsonReader();
 
             return "Successfully read json file!";
         }

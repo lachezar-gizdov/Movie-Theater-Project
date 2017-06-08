@@ -7,7 +7,16 @@ namespace MovieTheater.Framework.Common
 {
     public class FileReaderFactory : IFileReaderFactory
     {
-        public string CreateJsonReader(IReader reader, IWriter writer)
+        private IReader reader;
+        private IWriter writer;
+
+        public FileReaderFactory(IReader reader, IWriter writer)
+        {
+            this.reader = reader;
+            this.writer = writer;
+        }
+
+        public string CreateJsonReader()
         {
             var jsonReader = new JsonReader(reader, writer);
             string jsonString = jsonReader.Read();
