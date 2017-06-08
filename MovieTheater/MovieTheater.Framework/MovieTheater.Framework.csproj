@@ -56,6 +56,7 @@
     <Compile Include="Core\Commands\CreateHallCommand.cs" />
     <Compile Include="Core\Commands\CreateJsonReaderCommand.cs" />
     <Compile Include="Core\Commands\CreateMovieCommand.cs" />
+    <Compile Include="Core\Commands\CreatePdfReportCommand.cs" />
     <Compile Include="Core\Commands\CreateTheaterCommand.cs" />
     <Compile Include="Core\Commands\CreateTicketCommand.cs" />
     <Compile Include="Core\Commands\CreateUserCommand.cs" />
