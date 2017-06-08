@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MovieTheater.Data;
 using MovieTheater.Framework.Core.Commands.Contracts;
-using MovieTheater.Models;
 using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands

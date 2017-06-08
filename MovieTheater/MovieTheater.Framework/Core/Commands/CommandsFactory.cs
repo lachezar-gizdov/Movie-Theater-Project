@@ -1,7 +1,7 @@
 ﻿using System;
+using Bytes2you.Validation;
 using MovieTheater.Data;
 using MovieTheater.Framework.Core.Commands.Contracts;
-using MovieTheater.Models.Factory;
 using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
@@ -9,10 +9,13 @@ namespace MovieTheater.Framework.Core.Commands
     public class CommandsFactory : ICommandsFactory
     {
         private MovieTheaterDbContext dbContext;
-        private IModelsFactory factory;
+        private readonly IModelsFactory factory;
 
         public CommandsFactory(MovieTheaterDbContext dbContext, IModelsFactory factory)
         {
+            Guard.WhenArgument(dbContext, "dbContext").IsNull().Throw();
+            Guard.WhenArgument(factory, "Models Factory").IsNull().Throw();
+
             this.dbContext = dbContext;
             this.factory = factory;
         }
