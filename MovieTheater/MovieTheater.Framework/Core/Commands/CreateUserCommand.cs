@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using MovieTheater.Framework.Core.Commands.Contracts;
-using MovieTheater.Data;
 using System.Linq;
+using MovieTheater.Data;
+using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Models;
 using MovieTheater.Models.Factory.Contracts;
 
@@ -26,19 +26,18 @@ namespace MovieTheater.Framework.Core.Commands
                 throw new Exception("Some of the passed parameters are empty!");
             }
 
-            //var city = dbContext.Cities.Where(c => c.Name == parameters[2]).FirstOrDefault();
+            // var city = dbContext.Cities.Where(c => c.Name == parameters[2]).FirstOrDefault();
 
-            //if (city == null)
-            //{
+            // if (city == null)
+            // {
             //    city = new City() { Name = parameters[2] };
-            //}
-
+            // }
             var city = new City() { Name = parameters[2] };
             var theater = new Theater() { Name = parameters[3], City = city };
 
             var user = this.factory.CreateUser(parameters[0], parameters[1], city, theater);
             this.dbContext.Users.Add(user);
-            dbContext.SaveChanges();
+            this.dbContext.SaveChanges();
             
             return "Successfully created a new User!";
         }

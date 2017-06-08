@@ -10,6 +10,6 @@
 
         Ticket CreateTicket();
 
-        User CreateUser(string fName, string lName, City city, Theater theater);
+        User CreateUser(string firstName, string lastName, City city, Theater theater);
     }
 }

@@ -1,5 +1,5 @@
-﻿using MovieTheater.Framework.Core.Providers.Contracts;
-using System.IO;
+﻿using System.IO;
+using MovieTheater.Framework.Core.Providers.Contracts;
 
 namespace MovieTheater.Framework.Core.Providers
 {
@@ -12,6 +12,7 @@ namespace MovieTheater.Framework.Core.Providers
         }
 
         public IReader Reader { get; private set; }
+
         public IWriter Writer { get; private set; }
 
         public string Read()

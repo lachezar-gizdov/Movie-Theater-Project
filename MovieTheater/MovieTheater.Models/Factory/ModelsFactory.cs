@@ -32,9 +32,9 @@ namespace MovieTheater.Models.Factory
             return ticket;
         }
 
-        public User CreateUser(string fName, string lName, City city, Theater theater)
+        public User CreateUser(string firstName, string lastName, City city, Theater theater)
         {
-            User user = new User() { FirstName = fName, LastName = lName, City = city, Theater = theater};
+            User user = new User() { FirstName = firstName, LastName = lastName, City = city, Theater = theater };
 
             return user;
         }
