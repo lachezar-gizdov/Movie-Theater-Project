@@ -1,13 +1,18 @@
 ﻿using System;
 using MovieTheater.Framework.Common.Contracts;
+using MovieTheater.Framework.Core.Providers;
+using MovieTheater.Framework.Core.Providers.Contracts;
 
 namespace MovieTheater.Framework.Common
 {
-    public class FileReaderFactory : IFileReader
+    public class FileReaderFactory : IFileReaderFactory
     {
-        public string CreateJsonReader()
+        public string CreateJsonReader(IReader reader, IWriter writer)
         {
-            throw new NotImplementedException();
+            var jsonReader = new JsonReader(reader, writer);
+            string jsonString = jsonReader.Read();
+
+            return jsonString;
         }
     }
 }

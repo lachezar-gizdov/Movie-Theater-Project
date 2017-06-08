@@ -2,21 +2,26 @@
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Core.Providers;
 using MovieTheater.Framework.Common.Contracts;
+using MovieTheater.Framework.Core.Providers.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
     public class CreateJsonReaderCommand : ICommand
     {
-        private IFileReader fileReader;
+        private IFileReaderFactory fileReaderFactory;
+        private IReader reader;
+        private IWriter writer;
 
-        public CreateJsonReaderCommand(IFileReader fileReader)
+        public CreateJsonReaderCommand(IFileReaderFactory fileReader, IReader reader, IWriter writer)
         {
-            this.fileReader = fileReader;
+            this.fileReaderFactory = fileReader;
+            this.reader = reader;
+            this.writer = writer;
         }
 
         public string Execute(List<string> parameters)
         {
-            var jsonReader = this.fileReader.CreateJsonReader();
+            var jsonReader = this.fileReaderFactory.CreateJsonReader(this.reader, this.writer);
 
             return "Successfully read json file!";
         }
