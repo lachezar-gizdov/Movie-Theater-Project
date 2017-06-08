@@ -1,7 +1,8 @@
-﻿using MovieTheater.Framework.Common.Contracts;
+﻿using System.Diagnostics;
+using MovieTheater.Framework.Common.Contracts;
 using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
 using PdfSharp.Pdf;
-using System.Diagnostics;
 
 namespace MovieTheater.Framework.Common
 {
@@ -22,19 +23,19 @@ namespace MovieTheater.Framework.Common
             // Create a font
             XFont font = new XFont("Verdana", 10, XFontStyle.BoldItalic);
 
-            // Draw the text
-            gfx.DrawString(
-                textToExport,
-                font,
-                XBrushes.Black,
-                new XRect(0, 0, page.Width, page.Height),
-                XStringFormats.TopLeft);
+            XTextFormatter tf = new XTextFormatter(gfx);
+
+            XRect rect = new XRect(10, 10, 250, 232);
+            gfx.DrawRectangle(XBrushes.Azure, rect);
+
+            // tf.Alignment = ParagraphAlignment.Left;
+            tf.DrawString(textToExport, font, XBrushes.Black, rect, XStringFormats.TopLeft);
 
             // Save the document...
             document.Save(fileName + ".pdf");
 
             // ...and start a viewer.
-             Process.Start(fileName + ".pdf");
+            Process.Start(fileName + ".pdf");
         }
     }
 }
