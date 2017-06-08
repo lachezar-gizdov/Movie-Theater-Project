@@ -26,7 +26,7 @@ namespace MovieTheater.Framework.Core.Commands
             }
 
             var cityName = parameters[1];
-            var city = dbContext.Cities.FirstOrDefault(c => c.Name == cityName);
+            var city = this.dbContext.Cities.FirstOrDefault(c => c.Name == cityName);
 
             if (city == null)
             {
@@ -39,7 +39,6 @@ namespace MovieTheater.Framework.Core.Commands
             this.dbContext.SaveChanges();
 
             return $"Successfully created a new Theater with ID {theater.Id}!";
-            
         }
     }
 }

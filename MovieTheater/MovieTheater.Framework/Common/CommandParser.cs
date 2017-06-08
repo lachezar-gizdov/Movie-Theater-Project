@@ -7,7 +7,7 @@ namespace MovieTheater.Framework.Common
 {
     public class CommandParser : IParser
     {
-        private CommandsFactory factory;
+        private readonly CommandsFactory factory;
 
         public CommandParser(CommandsFactory factory)
         {
