@@ -23,7 +23,7 @@ namespace MovieTheater.CLI
             var commandParser = new CommandParser(commandsFactory);
             var engine = new Engine(commandParser, reader, writer);
 
-            PDFExporter.Export();
+            // PDFExporter.Export();
 
             engine.Start();
         }
