@@ -8,7 +8,7 @@ namespace MovieTheater.Framework.Core.Commands
 {
     public class CommandsFactory : ICommandsFactory
     {
-        private MovieTheaterDbContext dbContext;
+        private readonly MovieTheaterDbContext dbContext;
         private readonly IModelsFactory factory;
 
         public CommandsFactory(MovieTheaterDbContext dbContext, IModelsFactory factory)
