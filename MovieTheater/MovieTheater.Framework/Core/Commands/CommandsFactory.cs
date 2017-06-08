@@ -33,8 +33,6 @@ namespace MovieTheater.Framework.Core.Commands
                     return new CreateTheaterCommand(this.dbContext, this.factory);
                 case "createuser":
                     return new CreateUserCommand(this.dbContext, this.factory);
-                case "readjson":
-                    return new CreateJsonReaderCommand();
                 case "createpdfreport":
                     return new CreatePdfReportCommand(this.dbContext, this.exporter);
                 default:

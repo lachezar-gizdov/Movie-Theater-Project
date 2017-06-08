@@ -1,29 +1,24 @@
 ﻿using System.Collections.Generic;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Core.Providers;
-using MovieTheater.Framework.Core.Providers.Contracts;
+using MovieTheater.Framework.Common.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
     public class CreateJsonReaderCommand : ICommand
     {
-        private IReader reader;
-        private IWriter writer;
+        private IFileReader fileReader;
 
-        public CreateJsonReaderCommand()
+        public CreateJsonReaderCommand(IFileReader fileReader)
         {
-            this.reader = new ConsoleReader();
-            this.writer = new ConsoleWriter();
+            this.fileReader = fileReader;
         }
 
         public string Execute(List<string> parameters)
         {
-            var jsonReader = new JsonReader(reader, writer);
-            string jsonString = jsonReader.Read();
+            var jsonReader = this.fileReader.CreateJsonReader();
 
-            this.writer.Write("Successfully read json file!");
-
-            return jsonString;
+            return "Successfully read json file!";
         }
     }
 }
