@@ -19,10 +19,11 @@ namespace MovieTheater.Framework.Core.Commands
         public string Execute(List<string> parameters)
         {
             var jsonReader = new JsonReader(reader, writer);
+            string jsonString = jsonReader.Read();
 
-            jsonReader.Read();
+            this.writer.Write("Successfully read json file!");
 
-            return "Successfully read json file!";
+            return jsonString;
         }
     }
 }

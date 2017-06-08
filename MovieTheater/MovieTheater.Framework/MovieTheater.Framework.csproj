@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Common\CommandParser.cs" />
     <Compile Include="Common\Contracts\IParser.cs" />
-    <Compile Include="Common\JsonParser.cs" />
     <Compile Include="Common\PDFExporter.cs" />
     <Compile Include="Core\Commands\CommandsFactory.cs" />
     <Compile Include="Core\Commands\Contracts\ICommand.cs" />

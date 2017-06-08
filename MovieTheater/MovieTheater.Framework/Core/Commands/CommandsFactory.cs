@@ -30,7 +30,7 @@ namespace MovieTheater.Framework.Core.Commands
                     return new CreateTheaterCommand(this.dbContext, this.factory);
                 case "createuser":
                     return new CreateUserCommand(this.dbContext, this.factory);
-                case "createjsonreader":
+                case "readjson":
                     return new CreateJsonReaderCommand();
                 default:
                     throw new ArgumentException("The passed command is not valid!");

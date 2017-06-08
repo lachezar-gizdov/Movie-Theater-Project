@@ -20,7 +20,7 @@ namespace MovieTheater.Framework.Core.Providers
             this.Writer.Write("Enter path of JSON file:");
             string path = this.Reader.Read();
 
-            StreamReader readJson = new StreamReader(path);
+            StreamReader readJson = new StreamReader($@"{path}");
             string jsonString = readJson.ReadToEnd();
 
             return jsonString;
