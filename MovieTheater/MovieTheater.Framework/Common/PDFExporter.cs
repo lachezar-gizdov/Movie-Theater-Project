@@ -1,12 +1,13 @@
-﻿using PdfSharp.Drawing;
+﻿using MovieTheater.Framework.Common.Contracts;
+using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System.Diagnostics;
 
 namespace MovieTheater.Framework.Common
 {
-    public static class PDFExporter
+    public class PdfExporter : IExporter
     {
-        public static void Export()
+        public void Export(string textToExport, string fileName)
         {
             // Create a new PDF document
             PdfDocument document = new PdfDocument();
@@ -19,19 +20,21 @@ namespace MovieTheater.Framework.Common
             XGraphics gfx = XGraphics.FromPdfPage(page);
 
             // Create a font
-            XFont font = new XFont("Verdana", 20, XFontStyle.BoldItalic);
+            XFont font = new XFont("Verdana", 10, XFontStyle.BoldItalic);
 
             // Draw the text
-            gfx.DrawString("Hello, World!", font, XBrushes.Black,
+            gfx.DrawString(
+                textToExport,
+                font,
+                XBrushes.Black,
                 new XRect(0, 0, page.Width, page.Height),
                 XStringFormats.TopLeft);
 
             // Save the document...
-            const string filename = "HelloWorld.pdf";
-            document.Save(filename);
+            document.Save(fileName + ".pdf");
 
             // ...and start a viewer.
-            // Process.Start(filename);
+             Process.Start(fileName + ".pdf");
         }
     }
 }

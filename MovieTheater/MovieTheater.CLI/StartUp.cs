@@ -18,12 +18,11 @@ namespace MovieTheater.CLI
 
             var reader = new ConsoleReader();
             var writer = new ConsoleWriter();
+            var pdfExporter = new PdfExporter();
             var modelsFactory = new ModelsFactory();
-            var commandsFactory = new CommandsFactory(data, modelsFactory);
+            var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter);
             var commandParser = new CommandParser(commandsFactory);
             var engine = new Engine(commandParser, reader, writer);
-
-            // PDFExporter.Export();
 
             engine.Start();
         }
