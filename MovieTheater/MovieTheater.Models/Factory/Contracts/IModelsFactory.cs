@@ -4,6 +4,8 @@
     {
         Theater CreateTheater(string theaterName, City city);
 
+        City CreateCity(string cityName);
+
         Movie CreateMovie();
 
         Hall CreateHall();

@@ -1,4 +1,5 @@
-﻿using MovieTheater.Models.Factory.Contracts;
+﻿using System;
+using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Models.Factory
 {
@@ -9,6 +10,13 @@ namespace MovieTheater.Models.Factory
             Theater theater = new Theater() { Name = theaterName, City = city };
 
             return theater;
+        }
+
+        public City CreateCity(string cityName)
+        {
+            City city = new City() { Name = cityName };
+
+            return city;
         }
 
         public Movie CreateMovie()
