@@ -35,7 +35,7 @@ namespace MovieTheater.Framework.Common
             // document.Save(fileName + ".pdf");
             document.Save($"../../PDF/{fileName}.pdf");
             // ...and start a viewer.
-            // Process.Start($"../../{fileName}.pdf");
+            // Process.Start($"../../MovieTheater.CLI/PDF/{fileName}.pdf"); TODO: Fix path
         }
     }
 }

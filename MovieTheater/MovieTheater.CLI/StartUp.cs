@@ -1,12 +1,9 @@
 ﻿using System.Data.Entity;
 using MovieTheater.Data;
 using MovieTheater.Data.Migrations;
-using MovieTheater.Framework.Common;
-using MovieTheater.Framework.Core;
-using MovieTheater.Framework.Core.Commands;
-using MovieTheater.Framework.Core.Providers;
-using MovieTheater.Models.Factory;
-using MovieTheater.Framework.Providers;
+using MovieTheater.Framework.Core.Contracts;
+using MovieTheater.CLI.NinjectModules;
+using Ninject;
 
 namespace MovieTheater.CLI
 {
@@ -17,14 +14,18 @@ namespace MovieTheater.CLI
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
             var data = new MovieTheaterDbContext();
 
-            var reader = new ConsoleReader();
-            var writer = new ConsoleWriter();
-            var pdfExporter = new PdfExporter();
-            var modelsFactory = new ModelsFactory();
-            var fileProviderFactory = new FileProviderFactory(reader,writer);
-            var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter, fileProviderFactory);
-            var commandParser = new CommandParser(commandsFactory);
-            var engine = new Engine(commandParser, reader, writer);
+            IKernel kernel = new StandardKernel(new MovieTheaterModule());
+
+            //var reader = new ConsoleReader();
+            //var writer = new ConsoleWriter();
+            //var pdfExporter = new PdfExporter();
+            //var modelsFactory = new ModelsFactory();
+            //var fileProviderFactory = new FileProviderFactory(reader,writer);
+            //var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter, fileProviderFactory);
+            //var commandParser = new CommandParser(commandsFactory);
+            // var engine = new Engine(commandParser, reader, writer);
+
+            IEngine engine = kernel.Get<IEngine>();
 
             engine.Start();
         }

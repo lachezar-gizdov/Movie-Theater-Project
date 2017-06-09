@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Models", "Movi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTheater.Framework", "MovieTheater.Framework\MovieTheater.Framework.csproj", "{4B9586A1-D208-4C77-9100-E937F9F6DA83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjectModules", "NinjectModules\NinjectModules.csproj", "{A54AB993-6FD0-4BCB-814F-0BD1320BF49E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4B9586A1-D208-4C77-9100-E937F9F6DA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B9586A1-D208-4C77-9100-E937F9F6DA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B9586A1-D208-4C77-9100-E937F9F6DA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54AB993-6FD0-4BCB-814F-0BD1320BF49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54AB993-6FD0-4BCB-814F-0BD1320BF49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54AB993-6FD0-4BCB-814F-0BD1320BF49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54AB993-6FD0-4BCB-814F-0BD1320BF49E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
