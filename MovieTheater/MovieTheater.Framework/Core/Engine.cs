@@ -9,6 +9,8 @@ namespace MovieTheater.Framework.Core
     public class Engine : IEngine
     {
         private const string CommandParserCheck = "Engine Parser provider";
+        private const string ReaderCheck = "Engine Reader provider";
+        private const string WriterCheck = "Engine Writer provider";
 
         private IParser commandParser;
         private IReader reader;
@@ -17,6 +19,8 @@ namespace MovieTheater.Framework.Core
         public Engine(IParser commandParser, IReader reader, IWriter writer)
         {
             Guard.WhenArgument(commandParser, CommandParserCheck).IsNull().Throw();
+            Guard.WhenArgument(reader, ReaderCheck).IsNull().Throw();
+            Guard.WhenArgument(writer, WriterCheck).IsNull().Throw();
 
             this.commandParser = commandParser;
             this.reader = reader;
