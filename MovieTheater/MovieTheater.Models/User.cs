@@ -14,14 +14,15 @@ namespace MovieTheater.Models
 
         public int Id { get; set; }
 
-        [Required]
+        [Required, Range(3, 20)]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required, Range(3, 20)]
         public string LastName { get; set; }
 
         public virtual City City { get; set; }
 
+        [Required]
         public virtual Theater Theater { get; set; }
 
         public virtual ICollection<Ticket> PurchasedTickets

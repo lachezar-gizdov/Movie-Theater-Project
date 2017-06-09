@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MovieTheater.Data;
+using MovieTheater.Data.Contracts;
+using MovieTheater.Framework.Core.Commands.Abstractions;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Models.Factory.Contracts;
-using MovieTheater.Data.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
-    public class CreateUserCommand : ICommand
+    public class CreateUserCommand : Command, ICommand
     {
-        private readonly IMovieTheaterDbContext dbContext;
-        private readonly IModelsFactory factory;
-
-        public CreateUserCommand(IMovieTheaterDbContext dbContext, IModelsFactory factory)
+        public CreateUserCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) : 
+            base(dbContext, modelsFactory)
         {
-            this.dbContext = dbContext;
-            this.factory = factory;
         }
 
-        public string Execute(List<string> parameters)
+        public override string Execute(List<string> parameters)
         {
             if (parameters.Any(x => x == string.Empty))
             {
@@ -28,18 +24,18 @@ namespace MovieTheater.Framework.Core.Commands
 
             var cityName = parameters[2];
             var theaterName = parameters[3];
-            var city = this.dbContext.Cities.FirstOrDefault(c => c.Name == cityName);
+            var city = this.DbContext.Cities.FirstOrDefault(c => c.Name == cityName);
 
             if (city == null)
             {
-                city = this.factory.CreateCity(cityName);
+                city = this.ModelsFactory.CreateCity(cityName);
             }
 
-            var theater = this.dbContext.Theaters.FirstOrDefault(t => t.Name == theaterName);
+            var theater = this.DbContext.Theaters.FirstOrDefault(t => t.Name == theaterName);
 
-            var user = this.factory.CreateUser(parameters[0], parameters[1], city, theater);
-            this.dbContext.Users.Add(user);
-            this.dbContext.SaveChanges();
+            var user = this.ModelsFactory.CreateUser(parameters[0], parameters[1], city, theater);
+            this.DbContext.Users.Add(user);
+            this.DbContext.SaveChanges();
 
             return $"Successfully created a new User with ID {user.Id}!";
         }

@@ -18,7 +18,7 @@ namespace MovieTheater.Framework.Providers
     
         public string CreateJsonReader()
         {
-            var jsonReader = new JsonReader(reader, writer);
+            var jsonReader = new JsonReader(this.reader, this.writer);
             string jsonString = jsonReader.Read();
 
             return jsonString;
@@ -29,6 +29,5 @@ namespace MovieTheater.Framework.Providers
             var jsonParser = new JsonParser(jsonString);
             jsonParser.Parse();
         }
-
     }
 }

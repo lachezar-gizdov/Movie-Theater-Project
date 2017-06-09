@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
-using MovieTheater.Models;
 using MovieTheater.Data.Contracts;
+using MovieTheater.Models;
 
 namespace MovieTheater.Data
 {

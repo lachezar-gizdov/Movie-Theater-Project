@@ -1,30 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MovieTheater.Data;
-using MovieTheater.Framework.Common.Contracts;
-using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Data.Contracts;
+using MovieTheater.Framework.Common.Contracts;
+using MovieTheater.Framework.Core.Commands.Abstractions;
+using MovieTheater.Framework.Core.Commands.Contracts;
+using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
-    public class CreatePdfReportCommand : ICommand
+    public class CreatePdfReportCommand : Command, ICommand
     {
-        private readonly IMovieTheaterDbContext dbContext;
         private readonly IExporter exporter;
 
-        public CreatePdfReportCommand(IMovieTheaterDbContext dbContext, IExporter exporter)
+        public CreatePdfReportCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory, IExporter exporter) : 
+            base(dbContext, modelsFactory)
         {
-            this.dbContext = dbContext;
             this.exporter = exporter;
         }
 
-        public string Execute(List<string> parameters)
+        public override string Execute(List<string> parameters)
         {
             string reportName = parameters[0];
 
             var builder = new StringBuilder();
-            this.dbContext.Theaters.ToList().ForEach(t => builder.AppendLine($"Theater: {t.Name}, Location: {t.City.Name}"));
+            this.DbContext.Theaters.ToList().ForEach(t => builder.AppendLine($"Theater: {t.Name}, Location: {t.City.Name}"));
 
             this.exporter.Export(builder.ToString(), parameters[0]);
 

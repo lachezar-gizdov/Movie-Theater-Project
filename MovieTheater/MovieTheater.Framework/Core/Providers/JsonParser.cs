@@ -1,6 +1,6 @@
-﻿using System.Web.Script.Serialization;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
 namespace MovieTheater.Framework.Core.Providers
 {
@@ -16,7 +16,7 @@ namespace MovieTheater.Framework.Core.Providers
         public void Parse()
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
-            List<string[]> data = serializer.Deserialize<List<string[]>>(jsonString);
+            List<string[]> data = serializer.Deserialize<List<string[]>>(this.jsonString);
 
             switch (this.jsonString)
             {

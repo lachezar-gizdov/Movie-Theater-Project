@@ -1,5 +1,5 @@
-﻿using MovieTheater.Models;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using MovieTheater.Models;
 
 namespace MovieTheater.Data.Contracts
 {

@@ -18,10 +18,10 @@ namespace MovieTheater.Models
 
         public int Id { get; set; }
 
-        [Required]
+        [Required, Range(3, 20)]
         public string Name { get; set; }
 
-        [Required]
+        [Required, Range(3, 20)]
         public virtual City City { get; set; }
 
         public virtual ICollection<User> Users

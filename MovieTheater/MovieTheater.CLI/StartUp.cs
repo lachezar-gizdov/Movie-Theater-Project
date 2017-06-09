@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
+using MovieTheater.CLI.NinjectModules;
 using MovieTheater.Data;
 using MovieTheater.Data.Migrations;
 using MovieTheater.Framework.Core.Contracts;
-using MovieTheater.CLI.NinjectModules;
 using Ninject;
 
 namespace MovieTheater.CLI
@@ -16,15 +16,14 @@ namespace MovieTheater.CLI
 
             IKernel kernel = new StandardKernel(new MovieTheaterModule());
 
-            //var reader = new ConsoleReader();
-            //var writer = new ConsoleWriter();
-            //var pdfExporter = new PdfExporter();
-            //var modelsFactory = new ModelsFactory();
-            //var fileProviderFactory = new FileProviderFactory(reader,writer);
-            //var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter, fileProviderFactory);
-            //var commandParser = new CommandParser(commandsFactory);
+            // var reader = new ConsoleReader();
+            // var writer = new ConsoleWriter();
+            // var pdfExporter = new PdfExporter();
+            // var modelsFactory = new ModelsFactory();
+            // var fileProviderFactory = new FileProviderFactory(reader,writer);
+            // var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter, fileProviderFactory);
+            // var commandParser = new CommandParser(commandsFactory);
             // var engine = new Engine(commandParser, reader, writer);
-
             IEngine engine = kernel.Get<IEngine>();
 
             engine.Start();
