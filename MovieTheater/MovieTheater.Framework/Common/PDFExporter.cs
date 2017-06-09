@@ -32,10 +32,10 @@ namespace MovieTheater.Framework.Common
             tf.DrawString(textToExport, font, XBrushes.Black, rect, XStringFormats.TopLeft);
 
             // Save the document...
-            document.Save(fileName + ".pdf");
-
+            // document.Save(fileName + ".pdf");
+            document.Save($"../../PDF/{fileName}.pdf");
             // ...and start a viewer.
-            Process.Start(fileName + ".pdf");
+            // Process.Start($"../../{fileName}.pdf");
         }
     }
 }
