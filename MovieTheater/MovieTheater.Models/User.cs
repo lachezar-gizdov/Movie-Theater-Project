@@ -14,10 +14,10 @@ namespace MovieTheater.Models
 
         public int Id { get; set; }
 
-        [Required, Range(3, 20)]
+        [Required]
         public string FirstName { get; set; }
 
-        [Required, Range(3, 20)]
+        [Required]
         public string LastName { get; set; }
 
         public virtual City City { get; set; }
