@@ -44,13 +44,14 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CommandParser.cs" />
-    <Compile Include="Common\Contracts\IFileReaderFactory.cs" />
+    <Compile Include="Core\Providers\Contracts\IFileProviderFactory.cs" />
     <Compile Include="Common\Contracts\IExporter.cs" />
     <Compile Include="Common\Contracts\IParser.cs" />
-    <Compile Include="Common\FileReaderFactory.cs" />
+    <Compile Include="Core\Providers\FileProviderFactory.cs" />
     <Compile Include="Common\PDFExporter.cs" />
     <Compile Include="Core\Commands\CommandsFactory.cs" />
     <Compile Include="Core\Commands\Contracts\ICommand.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Core\Providers\ConsoleReader.cs" />
     <Compile Include="Core\Providers\ConsoleWriter.cs" />
+    <Compile Include="Core\Providers\JsonParser.cs" />
     <Compile Include="Core\Providers\JsonReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

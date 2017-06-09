@@ -24,6 +24,6 @@ namespace MovieTheater.Framework.Core.Providers
             string jsonString = readJson.ReadToEnd();
 
             return jsonString;
-        }
+        } 
     }
 }
