@@ -4,15 +4,16 @@ using System.Text;
 using MovieTheater.Data;
 using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core.Commands.Contracts;
+using MovieTheater.Data.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
     public class CreatePdfReportCommand : ICommand
     {
-        private readonly MovieTheaterDbContext dbContext;
+        private readonly IMovieTheaterDbContext dbContext;
         private readonly IExporter exporter;
 
-        public CreatePdfReportCommand(MovieTheaterDbContext dbContext, IExporter exporter)
+        public CreatePdfReportCommand(IMovieTheaterDbContext dbContext, IExporter exporter)
         {
             this.dbContext = dbContext;
             this.exporter = exporter;

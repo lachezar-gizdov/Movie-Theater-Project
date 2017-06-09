@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
 using MovieTheater.Models;
+using MovieTheater.Data.Contracts;
 
 namespace MovieTheater.Data
 {
-    public class MovieTheaterDbContext : DbContext
+    public class MovieTheaterDbContext : DbContext, IMovieTheaterDbContext
     {
         public MovieTheaterDbContext()
             : base("MovieTheater")

@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
@@ -52,6 +53,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MovieTheater.Data\MovieTheater.Data.csproj">
+      <Project>{63A8EBA4-8B4F-4775-B923-90AAE530F89E}</Project>
+      <Name>MovieTheater.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MovieTheater.Framework\MovieTheater.Framework.csproj">
       <Project>{4b9586a1-d208-4c77-9100-e937f9f6da83}</Project>
       <Name>MovieTheater.Framework</Name>

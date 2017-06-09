@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IMovieTheaterDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MovieTheaterDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

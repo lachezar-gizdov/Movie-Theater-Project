@@ -1,4 +1,6 @@
-﻿using MovieTheater.Framework.Common;
+﻿using MovieTheater.Data;
+using MovieTheater.Data.Contracts;
+using MovieTheater.Framework.Common;
 using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core;
 using MovieTheater.Framework.Core.Commands;
@@ -26,6 +28,7 @@ namespace MovieTheater.CLI.NinjectModules
             this.Bind<ICommandsFactory>().To<CommandsFactory>();
             this.Bind<IParser>().To<CommandParser>();
             this.Bind<IEngine>().To<Engine>();
+            this.Bind<IMovieTheaterDbContext>().To<MovieTheaterDbContext>();
         }
     }
 }

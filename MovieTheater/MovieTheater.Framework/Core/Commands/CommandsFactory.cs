@@ -5,17 +5,18 @@ using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Models.Factory.Contracts;
 using MovieTheater.Framework.Providers.Contracts;
+using MovieTheater.Data.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
     public class CommandsFactory : ICommandsFactory
     {
-        private readonly MovieTheaterDbContext dbContext;
+        private readonly IMovieTheaterDbContext dbContext;
         private readonly IModelsFactory factory;
         private readonly IExporter exporter;
         private IFileProviderFactory fileProviderFactory;
 
-        public CommandsFactory(MovieTheaterDbContext dbContext, IModelsFactory factory, IExporter exporter, IFileProviderFactory fileProviderFactory)
+        public CommandsFactory(IMovieTheaterDbContext dbContext, IModelsFactory factory, IExporter exporter, IFileProviderFactory fileProviderFactory)
         {
             Guard.WhenArgument(dbContext, "dbContext").IsNull().Throw();
             Guard.WhenArgument(factory, "Models Factory").IsNull().Throw();
