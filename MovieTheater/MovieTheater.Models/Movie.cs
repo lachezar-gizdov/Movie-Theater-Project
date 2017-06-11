@@ -6,18 +6,40 @@ namespace MovieTheater.Models
 {
     public class Movie
     {
-        private const short FIRST_FEATURE_FILM_YEAR = 1906;
-        private ICollection<Ticket> tickets;
+        private readonly short FIRST_FEATURE_FILM_YEAR;
+
         private short year;
+
+        private short duration;
+
+        private ICollection<Ticket> tickets;
 
         public Movie()
         {
+            this.FIRST_FEATURE_FILM_YEAR = 1906;
             this.tickets = new HashSet<Ticket>();
         }
 
-        public int Id { get; set; }
+        public int Id { get; private set; }
 
-        public string Name { get; set; }
+        public string Title { get; private set; }
+
+        public short Duration
+        {
+            get
+            {
+                return this.duration;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Cannot have a non-positive movie duration!");
+                }
+
+                this.duration = value;
+            }
+        }
 
         public short Year
         {
@@ -25,7 +47,7 @@ namespace MovieTheater.Models
             {
                 return this.year;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -43,16 +65,13 @@ namespace MovieTheater.Models
         }
 
         [Required]
-        public virtual Theater Theater { get; set; }
-
-        [Required]
         public virtual ICollection<Ticket> Tickets
         {
             get
             {
                 return this.tickets;
             }
-            set
+            private set
             {
                 this.tickets = value;
             }
