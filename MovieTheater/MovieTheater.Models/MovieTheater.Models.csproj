@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="City.cs" />
     <Compile Include="Factory\Contracts\IModelsFactory.cs" />
+    <Compile Include="FoodShop.cs" />
     <Compile Include="Hall.cs" />
     <Compile Include="HallShedules.cs" />
     <Compile Include="Factory\ModelsFactory.cs" />

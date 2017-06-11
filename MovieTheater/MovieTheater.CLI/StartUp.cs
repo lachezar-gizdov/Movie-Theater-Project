@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
 using MovieTheater.CLI.NinjectModules;
-using MovieTheater.Data;
+using MovieTheater.Data.Contexts;
 using MovieTheater.Data.Migrations;
 using MovieTheater.Framework.Core.Contracts;
 using Ninject;
+using MovieTheater.Models;
 
 namespace MovieTheater.CLI
 {
@@ -12,18 +13,16 @@ namespace MovieTheater.CLI
         public static void Main()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
-            var data = new MovieTheaterDbContext();
+
+
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContextLite, ConfigurationLite>());
+            //var data2 = new MovieTheaterDbContextLite();
+            //var foodShop = new FoodShop() { Name = "KFC" };
+            //data2.FoodShops.Add(foodShop);
+            //data2.SaveChanges();
+
 
             IKernel kernel = new StandardKernel(new MovieTheaterModule());
-
-            // var reader = new ConsoleReader();
-            // var writer = new ConsoleWriter();
-            // var pdfExporter = new PdfExporter();
-            // var modelsFactory = new ModelsFactory();
-            // var fileProviderFactory = new FileProviderFactory(reader,writer);
-            // var commandsFactory = new CommandsFactory(data, modelsFactory, pdfExporter, fileProviderFactory);
-            // var commandParser = new CommandParser(commandsFactory);
-            // var engine = new Engine(commandParser, reader, writer);
             IEngine engine = kernel.Get<IEngine>();
 
             engine.Start();

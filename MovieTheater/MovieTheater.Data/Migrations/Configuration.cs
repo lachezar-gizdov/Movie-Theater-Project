@@ -1,3 +1,4 @@
+using MovieTheater.Data.Contexts;
 using System.Data.Entity.Migrations;
 
 namespace MovieTheater.Data.Migrations

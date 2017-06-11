@@ -1,4 +1,4 @@
-﻿using MovieTheater.Data;
+﻿using MovieTheater.Data.Contexts;
 using MovieTheater.Data.Contracts;
 using MovieTheater.Framework.Common;
 using MovieTheater.Framework.Common.Contracts;

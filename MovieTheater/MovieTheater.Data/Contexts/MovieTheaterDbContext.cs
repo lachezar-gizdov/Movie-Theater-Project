@@ -1,8 +1,8 @@
-﻿using System.Data.Entity;
-using MovieTheater.Data.Contracts;
+﻿using MovieTheater.Data.Contracts;
 using MovieTheater.Models;
+using System.Data.Entity;
 
-namespace MovieTheater.Data
+namespace MovieTheater.Data.Contexts
 {
     public class MovieTheaterDbContext : DbContext, IMovieTheaterDbContext
     {
