@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MovieTheater.Models
@@ -6,8 +7,13 @@ namespace MovieTheater.Models
     public class Movie
     {
         private const short FIRST_FEATURE_FILM_YEAR = 1906;
-
+        private ICollection<Ticket> tickets;
         private short year;
+
+        public Movie()
+        {
+            this.tickets = new HashSet<Ticket>();
+        }
 
         public int Id { get; set; }
 
@@ -40,6 +46,16 @@ namespace MovieTheater.Models
         public virtual Theater Theater { get; set; }
 
         [Required]
-        public virtual Ticket Tickets { get; set; }
+        public virtual ICollection<Ticket> Tickets
+        {
+            get
+            {
+                return this.tickets;
+            }
+            set
+            {
+                this.tickets = value;
+            }
+        }
     }
 }

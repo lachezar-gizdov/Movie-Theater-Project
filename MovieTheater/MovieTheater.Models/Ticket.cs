@@ -7,9 +7,13 @@ namespace MovieTheater.Models
     public class Ticket
     {
         private ICollection<Hall> hall;
-        private ICollection<Movie> movieTitle;
 
         private decimal price;
+
+        public Ticket()
+        {
+            this.hall = new HashSet<Hall>();
+        }
 
         public int Id { get; set; }
 
@@ -28,18 +32,7 @@ namespace MovieTheater.Models
         }
 
         [Required]
-        public virtual ICollection<Movie> MovieTitle
-        {
-            get
-            {
-                return this.movieTitle;
-            }
-
-            private set
-            {
-                this.movieTitle = value;
-            }
-        }
+        public virtual Movie Movie { get; set; }
 
         [Required]
         public virtual string ProjectionTime { get; set; }
