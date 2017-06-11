@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieTheater.Models
 {
@@ -12,6 +13,7 @@ namespace MovieTheater.Models
 
         public int Id { get; set; }
 
+        [Required]
         public virtual ICollection<Hall> Hall
         {
             get
@@ -25,6 +27,7 @@ namespace MovieTheater.Models
             }
         }
 
+        [Required]
         public virtual ICollection<Movie> MovieTitle
         {
             get
@@ -38,7 +41,8 @@ namespace MovieTheater.Models
             }
         }
 
-        public string ProjectionTime { get; set; }
+        [Required]
+        public virtual string ProjectionTime { get; set; }
 
         public decimal Price
         {
@@ -58,6 +62,10 @@ namespace MovieTheater.Models
             }
         }
 
-        public int Seat { get; set; }
+        [Required]
+        public virtual User User { get; set; }
+
+        [Required]
+        public virtual int Seat { get; set; }
     }
 }
