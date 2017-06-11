@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MovieTheater.Models;
+using MovieTheater.Models.Factory;
 using System.Web.Script.Serialization;
 
 namespace MovieTheater.Framework.Core.Providers
@@ -13,18 +13,13 @@ namespace MovieTheater.Framework.Core.Providers
             this.jsonString = jsonString;
         }
 
-        public void Parse()
+        public Theater Parse()
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
-            List<string[]> data = serializer.Deserialize<List<string[]>>(this.jsonString);
+            var d = serializer.Deserialize<Theater>(jsonString);
+            var modelsFactory = new ModelsFactory();
 
-            switch (this.jsonString)
-            {
-                case "":
-
-                default:
-                    throw new ArgumentException("The passed JSON is not valid!");
-            }
+            return modelsFactory.CreateTheater(d.Name, d.City, d.Users);
         }
     }
 }

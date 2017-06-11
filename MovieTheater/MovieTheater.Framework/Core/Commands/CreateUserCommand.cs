@@ -33,7 +33,7 @@ namespace MovieTheater.Framework.Core.Commands
 
             var theater = this.DbContext.Theaters.FirstOrDefault(t => t.Name == theaterName);
 
-            var user = this.ModelsFactory.CreateUser(parameters[0], parameters[1], city, theater);
+            var user = this.ModelsFactory.CreateUser(parameters[0], parameters[1], city);
             this.DbContext.Users.Add(user);
             this.DbContext.SaveChanges();
 

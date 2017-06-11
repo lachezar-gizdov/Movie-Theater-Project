@@ -22,10 +22,10 @@ namespace MovieTheater.Framework.Core.Commands
             var jsonReader = this.fileProviderFactory.CreateJsonReader();
             var jsonString = jsonReader.Read();
 
-            //var theater = this.fileProviderFactory.CreateJsonParser(jsonString);
+            var theater = this.fileProviderFactory.CreateJsonParser(jsonString);
 
-            //this.DbContext.Theaters.Add(theater);
-            //this.DbContext.SaveChanges();
+            this.DbContext.Theaters.Add(theater);
+            this.DbContext.SaveChanges();
 
             return "Successfully read json file!";
         }

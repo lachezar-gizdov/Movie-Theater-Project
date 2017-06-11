@@ -1,5 +1,6 @@
 ﻿using System;
 using MovieTheater.Models.Factory.Contracts;
+using System.Collections.Generic;
 
 namespace MovieTheater.Models.Factory
 {
@@ -8,6 +9,13 @@ namespace MovieTheater.Models.Factory
         public Theater CreateTheater(string theaterName, City city)
         {
             Theater theater = new Theater() { Name = theaterName, City = city };
+
+            return theater;
+        }
+
+        public Theater CreateTheater(string theaterName, City city, ICollection<User> users)
+        {
+            Theater theater = new Theater() { Name = theaterName, City = city, Users = users };
 
             return theater;
         }
@@ -40,9 +48,9 @@ namespace MovieTheater.Models.Factory
             return ticket;
         }
 
-        public User CreateUser(string firstName, string lastName, City city, Theater theater)
+        public User CreateUser(string firstName, string lastName, City city)
         {
-            User user = new User() { FirstName = firstName, LastName = lastName, City = city, Theater = theater };
+            User user = new User() { FirstName = firstName, LastName = lastName, City = city };
 
             return user;
         }

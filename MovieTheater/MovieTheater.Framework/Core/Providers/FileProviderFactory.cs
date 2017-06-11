@@ -2,6 +2,7 @@
 using MovieTheater.Framework.Core.Providers;
 using MovieTheater.Framework.Core.Providers.Contracts;
 using MovieTheater.Framework.Providers.Contracts;
+using MovieTheater.Models;
 
 namespace MovieTheater.Framework.Providers
 {
@@ -23,10 +24,12 @@ namespace MovieTheater.Framework.Providers
             return jsonReader;
         }
 
-        public void CreateJsonParser(string jsonString)
+        public Theater CreateJsonParser(string jsonString)
         {
             var jsonParser = new JsonParser(jsonString);
-            jsonParser.Parse();
+            var theater = jsonParser.Parse();
+
+            return theater;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MovieTheater.Framework.Core.Providers;
+using MovieTheater.Models;
 
 namespace MovieTheater.Framework.Providers.Contracts
 {
@@ -6,6 +7,6 @@ namespace MovieTheater.Framework.Providers.Contracts
     {
         JsonReader CreateJsonReader();
 
-        void CreateJsonParser(string jsonString);
+        Theater CreateJsonParser(string jsonString);
     }
 }
