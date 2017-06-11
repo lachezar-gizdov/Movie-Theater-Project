@@ -16,12 +16,11 @@ namespace MovieTheater.Framework.Providers
             this.writer = writer;
         }
     
-        public string CreateJsonReader()
+        public JsonReader CreateJsonReader()
         {
             var jsonReader = new JsonReader(this.reader, this.writer);
-            string jsonString = jsonReader.Read();
 
-            return jsonString;
+            return jsonReader;
         }
 
         public void CreateJsonParser(string jsonString)

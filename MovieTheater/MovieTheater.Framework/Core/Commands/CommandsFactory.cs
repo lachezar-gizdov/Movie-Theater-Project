@@ -45,7 +45,7 @@ namespace MovieTheater.Framework.Core.Commands
                 case "createpdfreport":
                     return new CreatePdfReportCommand(this.dbContext, this.modelsFactory, this.exporter);
                 case "readjson":
-                    return new CreateJsonReaderCommand(this.fileProviderFactory);
+                    return new CreateJsonReaderCommand(this.fileProviderFactory, this.dbContext, this.modelsFactory);
                 default:
                     throw new ArgumentException("The passed command is not valid!");
             }
