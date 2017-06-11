@@ -24,6 +24,7 @@ namespace MovieTheater.Framework.Core.Commands
 
             var cityName = parameters[1];
             var city = this.DbContext.Cities.FirstOrDefault(c => c.Name == cityName);
+           
 
             if (city == null)
             {

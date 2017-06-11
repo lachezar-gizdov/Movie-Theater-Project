@@ -1,8 +1,12 @@
-﻿namespace MovieTheater.Models.Factory.Contracts
+﻿using System.Collections.Generic;
+
+namespace MovieTheater.Models.Factory.Contracts
 {
     public interface IModelsFactory
     {
         Theater CreateTheater(string theaterName, City city);
+
+        Theater CreateTheater(string theaterName, City city, ICollection<User> users);
 
         City CreateCity(string cityName);
 

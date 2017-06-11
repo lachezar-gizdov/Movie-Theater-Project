@@ -1,8 +1,8 @@
-﻿using System;
-using MovieTheater.Framework.Core.Providers;
+﻿using MovieTheater.Framework.Core.Providers;
 using MovieTheater.Framework.Core.Providers.Contracts;
 using MovieTheater.Framework.Providers.Contracts;
 using MovieTheater.Models;
+using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Providers
 {
@@ -10,11 +10,13 @@ namespace MovieTheater.Framework.Providers
     {
         private IReader reader;
         private IWriter writer;
+        private IModelsFactory modelsFactory;
 
-        public FileProviderFactory(IReader reader, IWriter writer)
+        public FileProviderFactory(IReader reader, IWriter writer, IModelsFactory modelsFactory)
         {
             this.reader = reader;
             this.writer = writer;
+            this.modelsFactory = modelsFactory;
         }
     
         public JsonReader CreateJsonReader()
@@ -26,7 +28,7 @@ namespace MovieTheater.Framework.Providers
 
         public Theater CreateJsonParser(string jsonString)
         {
-            var jsonParser = new JsonParser(jsonString);
+            var jsonParser = new JsonParser(jsonString, modelsFactory);
             var theater = jsonParser.Parse();
 
             return theater;

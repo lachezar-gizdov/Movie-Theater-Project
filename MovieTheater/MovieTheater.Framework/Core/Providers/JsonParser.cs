@@ -1,25 +1,28 @@
 ﻿using MovieTheater.Models;
 using MovieTheater.Models.Factory;
+using MovieTheater.Models.Factory.Contracts;
 using System.Web.Script.Serialization;
 
 namespace MovieTheater.Framework.Core.Providers
 {
     public class JsonParser
     {
-        private string jsonString; 
-
-        public JsonParser(string jsonString)
+        public JsonParser(string jsonString, IModelsFactory modelsFactory)
         {
-            this.jsonString = jsonString;
+            this.JsonString = jsonString;
+            this.ModelFactory = modelsFactory;
         }
+
+        public string JsonString { get; private set; }
+
+        public IModelsFactory ModelFactory { get; private set; }
 
         public Theater Parse()
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
-            var d = serializer.Deserialize<Theater>(jsonString);
-            var modelsFactory = new ModelsFactory();
+            var deserializer = serializer.Deserialize<Theater>(this.JsonString);
 
-            return modelsFactory.CreateTheater(d.Name, d.City, d.Users);
+            return this.ModelFactory.CreateTheater(deserializer.Name, deserializer.City, deserializer.Users);
         }
     }
 }
