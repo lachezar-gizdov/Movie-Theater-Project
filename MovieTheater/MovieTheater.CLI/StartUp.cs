@@ -15,11 +15,11 @@ namespace MovieTheater.CLI
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
 
 
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContextLite, ConfigurationLite>());
-            //var data2 = new MovieTheaterDbContextLite();
-            //var foodShop = new FoodShop() { Name = "KFC" };
-            //data2.FoodShops.Add(foodShop);
-            //data2.SaveChanges();
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContextLite, ConfigurationLite>());
+            var data2 = new MovieTheaterDbContextLite();
+            var foodShop = new FoodShop() { Name = "KFC" };
+            data2.FoodShops.Add(foodShop);
+            data2.SaveChanges();
 
 
             IKernel kernel = new StandardKernel(new MovieTheaterModule());
