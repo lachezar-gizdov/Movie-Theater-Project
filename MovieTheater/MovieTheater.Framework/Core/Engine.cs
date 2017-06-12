@@ -29,6 +29,9 @@ namespace MovieTheater.Framework.Core
 
         public void Start()
         {
+            var intro = this.commandParser.Process("intro");
+            this.writer.Write(intro);
+
             while (true)
             {
                 var fullCommand = this.reader.Read();

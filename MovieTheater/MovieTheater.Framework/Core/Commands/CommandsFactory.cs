@@ -5,6 +5,7 @@ using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Providers.Contracts;
 using MovieTheater.Models.Factory.Contracts;
+using MovieTheater.Framework.Core.Commands.Common;
 
 namespace MovieTheater.Framework.Core.Commands
 {
@@ -38,6 +39,10 @@ namespace MovieTheater.Framework.Core.Commands
 
             switch (command)
             {
+                case "intro":
+                    return new DisplayIntroTextCommand(this.dbContext, this.modelsFactory);
+                case "help":
+                    return new DisplayHelpCommand(this.dbContext, this.modelsFactory);
                 case "createtheater":
                     return new CreateTheaterCommand(this.dbContext, this.modelsFactory);
                 case "createuser":
