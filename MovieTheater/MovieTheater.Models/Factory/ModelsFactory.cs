@@ -27,9 +27,15 @@ namespace MovieTheater.Models.Factory
             return city;
         }
 
-        public Movie CreateMovie()
+        public Movie CreateMovie(string movieTitile, short movieYear, short movieDuration, string movieDirector)
         {
-            Movie movie = new Movie();
+            Movie movie = new Movie()
+            {
+                Title = movieTitile,
+                Year = movieYear,
+                Duration = movieDuration,
+                Director = movieDirector
+            };
 
             return movie;
         }

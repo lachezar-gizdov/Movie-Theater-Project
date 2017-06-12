@@ -22,9 +22,9 @@ namespace MovieTheater.Models
 
         public int Id { get; private set; }
 
-        public string Title { get; private set; }
+        public string Title { get; set; }
 
-        public string Director { get; private set; }
+        public string Director { get; set; }
 
         public short Duration
         {
@@ -32,7 +32,7 @@ namespace MovieTheater.Models
             {
                 return this.duration;
             }
-            private set
+            set
             {
                 if (value <= 0)
                 {
@@ -49,7 +49,7 @@ namespace MovieTheater.Models
             {
                 return this.year;
             }
-            private set
+            set
             {
                 if (value <= 0)
                 {

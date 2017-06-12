@@ -10,7 +10,7 @@ namespace MovieTheater.Models.Factory.Contracts
 
         City CreateCity(string cityName);
 
-        Movie CreateMovie();
+        Movie CreateMovie(string movieTitle, short movieYear, short movieLength, string movieDirector);
 
         Hall CreateHall();
 

@@ -23,6 +23,7 @@ namespace MovieTheater.Framework.Core.Commands.Common
 
             output.AppendLine("Below is the full list of supported commands:");
             output.AppendLine(" - Type \"createtheater [theater name] [city name]\" to create a new theater.");
+            output.AppendLine(" - Type \"createmovie [movie title] [movie year] [movie duration] [movie director]\" to create a new theater.");
             output.AppendLine(" - Type \"exit\" to quit the program.");
 
             return output.ToString();
