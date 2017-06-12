@@ -16,7 +16,7 @@ namespace MovieTheater.Models
         public virtual Movie Movie { get; private set; }
 
         [Required]
-        public virtual HallShedules HallSchedule { get; private set; }
+        public virtual HallSchedule HallSchedule { get; private set; }
 
         // Projection time format: 1700 is the same as 17:00, 1115 is the same as 11:15, etc
         public short ProjectionTime

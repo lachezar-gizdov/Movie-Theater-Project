@@ -17,7 +17,9 @@ namespace MovieTheater.Data.Contracts
 
         IDbSet<Hall> Halls { get; set; }
 
-        IDbSet<HallShedules> HallShedules { get; set; }
+        IDbSet<HallSchedule> HallShedules { get; set; }
+
+        IDbSet<Seat> Seat { get; set; }
 
         int SaveChanges();
     }
