@@ -1,7 +1,6 @@
-﻿using MovieTheater.Data.Contracts;
+﻿using System.Data.Entity;
+using MovieTheater.Data.Contracts;
 using MovieTheater.Models;
-using System.Data.Entity;
-using System;
 
 namespace MovieTheater.Data.Contexts
 {

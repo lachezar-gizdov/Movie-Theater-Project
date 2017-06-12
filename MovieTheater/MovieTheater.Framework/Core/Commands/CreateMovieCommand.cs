@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MovieTheater.Data.Contracts;
 using MovieTheater.Framework.Core.Commands.Abstractions;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Models.Factory.Contracts;
-using System.Linq;
 
 namespace MovieTheater.Framework.Core.Commands
 {

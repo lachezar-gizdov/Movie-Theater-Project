@@ -1,7 +1,6 @@
-﻿using MovieTheater.Models;
-using MovieTheater.Models.Factory;
+﻿using System.Web.Script.Serialization;
+using MovieTheater.Models;
 using MovieTheater.Models.Factory.Contracts;
-using System.Web.Script.Serialization;
 
 namespace MovieTheater.Framework.Core.Providers
 {

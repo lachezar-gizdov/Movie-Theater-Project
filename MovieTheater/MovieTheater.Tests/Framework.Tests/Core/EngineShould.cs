@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core;
 using MovieTheater.Framework.Core.Providers.Contracts;
-using System;
 using Telerik.JustMock;
 
 namespace MovieTheater.Tests.Framework.Tests.Core

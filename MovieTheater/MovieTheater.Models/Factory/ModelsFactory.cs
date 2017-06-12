@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using MovieTheater.Models.Factory.Contracts;
-using System.Collections.Generic;
 
 namespace MovieTheater.Models.Factory
 {

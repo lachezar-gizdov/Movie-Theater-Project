@@ -25,6 +25,7 @@ namespace MovieTheater.Models
             {
                 return this.projectionTime;
             }
+
             private set
             {
                 if (value < 0)

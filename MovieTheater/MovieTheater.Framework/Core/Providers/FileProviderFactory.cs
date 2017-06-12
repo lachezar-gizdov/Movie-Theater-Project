@@ -28,7 +28,7 @@ namespace MovieTheater.Framework.Providers
 
         public Theater CreateJsonParser(string jsonString)
         {
-            var jsonParser = new JsonParser(jsonString, modelsFactory);
+            var jsonParser = new JsonParser(jsonString, this.modelsFactory);
             var theater = jsonParser.Parse();
 
             return theater;

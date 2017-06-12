@@ -1,6 +1,6 @@
-﻿using MovieTheater.Data.Migrations;
+﻿using System.Data.Entity;
+using MovieTheater.Data.Migrations;
 using MovieTheater.Models;
-using System.Data.Entity;
 
 namespace MovieTheater.Data.Contexts
 {

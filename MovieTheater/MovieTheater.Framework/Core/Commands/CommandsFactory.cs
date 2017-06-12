@@ -2,10 +2,10 @@
 using Bytes2you.Validation;
 using MovieTheater.Data.Contracts;
 using MovieTheater.Framework.Common.Contracts;
+using MovieTheater.Framework.Core.Commands.Common;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Providers.Contracts;
 using MovieTheater.Models.Factory.Contracts;
-using MovieTheater.Framework.Core.Commands.Common;
 
 namespace MovieTheater.Framework.Core.Commands
 {

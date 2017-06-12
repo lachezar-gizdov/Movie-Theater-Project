@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using MovieTheater.Data.Contracts;
+using MovieTheater.Framework.Core.Commands.Abstractions;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Providers.Contracts;
-using MovieTheater.Data.Contracts;
 using MovieTheater.Models.Factory.Contracts;
-using MovieTheater.Framework.Core.Commands.Abstractions;
 
 namespace MovieTheater.Framework.Core.Commands
 {

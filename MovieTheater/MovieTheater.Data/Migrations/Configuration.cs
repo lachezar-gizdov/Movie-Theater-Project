@@ -1,5 +1,5 @@
-using MovieTheater.Data.Contexts;
 using System.Data.Entity.Migrations;
+using MovieTheater.Data.Contexts;
 
 namespace MovieTheater.Data.Migrations
 {

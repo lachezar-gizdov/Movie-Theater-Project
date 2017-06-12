@@ -4,7 +4,6 @@ using MovieTheater.Data.Contexts;
 using MovieTheater.Data.Migrations;
 using MovieTheater.Framework.Core.Contracts;
 using Ninject;
-using MovieTheater.Models;
 
 namespace MovieTheater.CLI
 {
@@ -15,13 +14,11 @@ namespace MovieTheater.CLI
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
 
             // TODO: Not working at this point
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContextLite, ConfigurationLite>());
-            //var data2 = new MovieTheaterDbContextLite();
-            //var foodShop = new FoodShop() { Name = "KFC" };
-            //data2.FoodShops.Add(foodShop);
-            //data2.SaveChanges();
-
-
+            // Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContextLite, ConfigurationLite>());
+            // var data2 = new MovieTheaterDbContextLite();
+            // var foodShop = new FoodShop() { Name = "KFC" };
+            // data2.FoodShops.Add(foodShop);
+            // data2.SaveChanges();
             IKernel kernel = new StandardKernel(new MovieTheaterModule());
             IEngine engine = kernel.Get<IEngine>();
 

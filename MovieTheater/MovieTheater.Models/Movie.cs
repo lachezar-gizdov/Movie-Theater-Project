@@ -6,7 +6,7 @@ namespace MovieTheater.Models
 {
     public class Movie
     {
-        private readonly short FIRST_FEATURE_FILM_YEAR;
+        private readonly short firstFeatureFilmYear;
 
         private short year;
 
@@ -16,7 +16,7 @@ namespace MovieTheater.Models
 
         public Movie()
         {
-            this.FIRST_FEATURE_FILM_YEAR = 1906;
+            this.firstFeatureFilmYear = 1906;
             this.tickets = new HashSet<Ticket>();
         }
 
@@ -32,6 +32,7 @@ namespace MovieTheater.Models
             {
                 return this.duration;
             }
+
             set
             {
                 if (value <= 0)
@@ -49,13 +50,14 @@ namespace MovieTheater.Models
             {
                 return this.year;
             }
+
             set
             {
                 if (value <= 0)
                 {
                     throw new ArgumentException("Cannot have a non-positive year!");
                 }
-                else if (value < FIRST_FEATURE_FILM_YEAR)
+                else if (value < this.firstFeatureFilmYear)
                 {
                     throw new ArgumentException("The entered date precedes any known feature films!");
                 }
@@ -73,6 +75,7 @@ namespace MovieTheater.Models
             {
                 return this.tickets;
             }
+
             private set
             {
                 this.tickets = value;

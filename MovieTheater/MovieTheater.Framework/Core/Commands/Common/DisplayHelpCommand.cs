@@ -1,9 +1,9 @@
-﻿using MovieTheater.Data.Contracts;
+﻿using System.Collections.Generic;
+using System.Text;
+using MovieTheater.Data.Contracts;
 using MovieTheater.Framework.Core.Commands.Abstractions;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Models.Factory.Contracts;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MovieTheater.Framework.Core.Commands.Common
 {
@@ -26,6 +26,5 @@ namespace MovieTheater.Framework.Core.Commands.Common
 
             return output.ToString();
         }
-
     }
 }
