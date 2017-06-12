@@ -24,6 +24,8 @@ namespace MovieTheater.Models
 
         public string Title { get; private set; }
 
+        public string Director { get; private set; }
+
         public short Duration
         {
             get
