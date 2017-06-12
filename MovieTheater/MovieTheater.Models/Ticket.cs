@@ -6,36 +6,33 @@ namespace MovieTheater.Models
 {
     public class Ticket
     {
-        private ICollection<Hall> hall;
-
         private decimal price;
 
-        public Ticket()
-        {
-            this.hall = new HashSet<Hall>();
-        }
+        private short projectionTime;
 
-        public int Id { get; set; }
+        public int Id { get; private set; }
 
         [Required]
-        public virtual ICollection<Hall> Hall
+        public virtual Movie Movie { get; private set; }
+
+        [Required]
+        public virtual HallShedules HallSchedule { get; private set; }
+
+        // Projection time format: 1700 is the same as 17:00, 1115 is the same as 11:15, etc
+        public short ProjectionTime
         {
             get
             {
-                return this.hall;
+                return this.projectionTime;
             }
-
             private set
             {
-                this.hall = value;
+                if (value < 0)
+                {
+                    throw new ArgumentException("The projection time cannot be negative!");
+                }
             }
         }
-
-        [Required]
-        public virtual Movie Movie { get; set; }
-
-        [Required]
-        public virtual string ProjectionTime { get; set; }
 
         public decimal Price
         {
@@ -56,9 +53,9 @@ namespace MovieTheater.Models
         }
 
         [Required]
-        public virtual User User { get; set; }
+        public virtual User User { get; private set; }
 
         [Required]
-        public virtual int Seat { get; set; }
+        public virtual int Seat { get; private set; }
     }
 }
