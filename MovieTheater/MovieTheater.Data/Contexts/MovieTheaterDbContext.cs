@@ -1,6 +1,7 @@
 ﻿using MovieTheater.Data.Contracts;
 using MovieTheater.Models;
 using System.Data.Entity;
+using System;
 
 namespace MovieTheater.Data.Contexts
 {
@@ -23,6 +24,8 @@ namespace MovieTheater.Data.Contexts
 
         public IDbSet<Hall> Halls { get; set; }
 
-        public IDbSet<HallShedules> HallShedules { get; set; }
+        public IDbSet<HallSchedule> HallShedules { get; set; }
+
+        public IDbSet<Seat> Seat { get; set; }
     }
 }

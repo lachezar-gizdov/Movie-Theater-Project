@@ -1,17 +1,41 @@
-﻿namespace MovieTheater.Models
-{
+﻿using System.Collections.Generic;
+
+namespace MovieTheater.Models
+{ 
     public class Hall
     {
+        private ICollection<Seat> seats;
+        private ICollection<HallSchedule> hallSchedules;
+
+        public Hall()
+        {
+            this.Seats = new HashSet<Seat>();
+            this.HallSchedules = new HashSet<HallSchedule>();
+        }
+
         public int Id { get; set; }
 
-        public int HallNumber { get; set; }
+        public virtual ICollection<Seat> Seats{
+            get
+            {
+                return this.seats;
+            }
+            set
+            {
+                this.seats = value;
+            }
+        }
 
-        public int Seats { get; set; }
-
-        public virtual HallShedules HallShedule { get; set; }
-
-        public virtual Ticket Ticket { get; set; }
-
-        public virtual Theater Theater { get; set; }
+        public virtual ICollection<HallSchedule> HallSchedules
+        {
+            get
+            {
+                return this.hallSchedules;
+            }
+            set
+            {
+                this.hallSchedules = value;
+            }
+        }
     }
 }
