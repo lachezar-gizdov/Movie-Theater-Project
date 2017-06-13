@@ -3,5 +3,6 @@ createtheater CinemaCity Sofia
 createtheater Arena Varna
 createhall 2 Arena
 createhall 15 Arena
+createschedule 1 2
 createuser Pesho Peshev Sofia Arena
 createpdfreport Ime

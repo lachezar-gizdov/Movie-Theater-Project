@@ -14,6 +14,8 @@ namespace MovieTheater.Models.Factory.Contracts
 
         Hall CreateHall(string number,Theater Theater);
 
+        HallSchedule CreateHallSchedule(string number, Hall hall);
+
         Ticket CreateTicket();
 
         User CreateUser(string firstName, string lastName, City city);

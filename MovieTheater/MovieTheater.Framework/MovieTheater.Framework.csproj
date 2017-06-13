@@ -51,6 +51,7 @@
     <Compile Include="Core\Commands\Abstractions\Command.cs" />
     <Compile Include="Core\Commands\Common\DisplayHelpCommand.cs" />
     <Compile Include="Core\Commands\Common\DisplayIntroTextCommand.cs" />
+    <Compile Include="Core\Commands\CreateHallScheduleCommand.cs" />
     <Compile Include="Core\Providers\Contracts\IFileProviderFactory.cs" />
     <Compile Include="Common\Contracts\IExporter.cs" />
     <Compile Include="Common\Contracts\IParser.cs" />

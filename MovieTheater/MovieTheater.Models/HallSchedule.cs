@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieTheater.Models
 {
@@ -14,6 +14,14 @@ namespace MovieTheater.Models
 
         public int Id { get; set; }
 
+        [Required]
+        public string Number { get; set; }
+
+        [Required]
+        public virtual Hall Hall { get; set; }
+
+        public string ProjectionTime { get; set; }
+
         public ICollection<Ticket> Tickets{
             get
             {
@@ -23,8 +31,6 @@ namespace MovieTheater.Models
             {
                 this.tickets = value;
             }
-        }
-
-        public DateTime ProjectionTime { get; set; }
+        }       
     }
 }

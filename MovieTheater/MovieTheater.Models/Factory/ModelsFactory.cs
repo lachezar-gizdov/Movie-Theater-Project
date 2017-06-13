@@ -50,6 +50,17 @@ namespace MovieTheater.Models.Factory
             return hall;
         }
 
+        public HallSchedule CreateHallSchedule(string number, Hall hall)
+        {
+            HallSchedule hallSchedule = new HallSchedule()
+            {
+                Number = number,
+                Hall = hall
+            };
+
+            return hallSchedule;
+        }
+
         public Ticket CreateTicket()
         {
             Ticket ticket = new Ticket();

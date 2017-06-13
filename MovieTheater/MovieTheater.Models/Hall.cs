@@ -21,7 +21,7 @@ namespace MovieTheater.Models
         public string Number { get; set; }
 
         [Required]
-        public Theater Theater { get; set; }
+        public virtual Theater Theater { get; set; }
 
         public int Seats
         {

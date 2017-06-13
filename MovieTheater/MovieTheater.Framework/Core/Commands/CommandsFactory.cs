@@ -47,6 +47,8 @@ namespace MovieTheater.Framework.Core.Commands
                     return new CreateTheaterCommand(this.dbContext, this.modelsFactory);
                 case "createhall":
                     return new CreateHallCommand(this.dbContext, this.modelsFactory);
+                case "createschedule":
+                    return new CreateHallScheduleCommand(this.dbContext, this.modelsFactory);
                 case "createuser":
                     return new CreateUserCommand(this.dbContext, this.modelsFactory);
                 case "createpdfreport":
