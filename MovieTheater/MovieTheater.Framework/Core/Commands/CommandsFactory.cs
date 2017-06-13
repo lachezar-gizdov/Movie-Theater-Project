@@ -45,10 +45,12 @@ namespace MovieTheater.Framework.Core.Commands
                     return new DisplayHelpCommand(this.dbContext, this.modelsFactory);
                 case "createtheater":
                     return new CreateTheaterCommand(this.dbContext, this.modelsFactory);
+                case "createhall":
+                    return new CreateHallCommand(this.dbContext, this.modelsFactory);
                 case "createuser":
                     return new CreateUserCommand(this.dbContext, this.modelsFactory);
                 case "createpdfreport":
-                    return new CreatePdfReportCommand(this.dbContext, this.modelsFactory, this.exporter);
+                    return new CreatePdfReportCommand(this.dbContext, this.modelsFactory, this.exporter);             
                 case "readjson":
                     return new CreateJsonReaderCommand(this.fileProviderFactory, this.dbContext, this.modelsFactory);
                 default:

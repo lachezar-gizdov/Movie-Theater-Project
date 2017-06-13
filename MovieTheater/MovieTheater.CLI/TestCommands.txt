@@ -1,5 +1,6 @@
 ﻿createtheater Arena Sofia
 createtheater CinemaCity Sofia
 createtheater Arena Varna
+createhall Imax Arena
 createuser Pesho Peshev Sofia Arena
 createpdfreport Ime

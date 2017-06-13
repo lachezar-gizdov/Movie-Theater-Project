@@ -39,7 +39,7 @@ namespace MovieTheater.Models.Factory
             return movie;
         }
 
-        public Hall CreateHall()
+        public Hall CreateHall(string name, Theater theater)
         {
             Hall hall = new Hall();
 

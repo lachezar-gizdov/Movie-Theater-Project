@@ -12,7 +12,7 @@ namespace MovieTheater.Models.Factory.Contracts
 
         Movie CreateMovie(string movieTitle, short movieYear, short movieLength, string movieDirector);
 
-        Hall CreateHall();
+        Hall CreateHall(string name,Theater Theater);
 
         Ticket CreateTicket();
 

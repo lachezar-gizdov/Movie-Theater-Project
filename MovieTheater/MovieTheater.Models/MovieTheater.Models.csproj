@@ -51,7 +51,6 @@
     <Compile Include="HallSchedule.cs" />
     <Compile Include="Factory\ModelsFactory.cs" />
     <Compile Include="Movie.cs" />
-    <Compile Include="Seat.cs" />
     <Compile Include="Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />

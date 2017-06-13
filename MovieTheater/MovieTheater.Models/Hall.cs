@@ -1,29 +1,34 @@
 ﻿using System.Collections.Generic;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieTheater.Models
 { 
     public class Hall
     {
-        private ICollection<Seat> seats;
-        private ICollection<HallSchedule> hallSchedules;
+        private readonly int seats;
+        private ICollection<HallSchedule> hallSchedules;  
 
         public Hall()
         {
-            this.Seats = new HashSet<Seat>();
+            seats = 80;
             this.HallSchedules = new HashSet<HallSchedule>();
         }
 
         public int Id { get; set; }
 
-        public virtual ICollection<Seat> Seats{
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public Theater Theater { get; set; }
+
+        public int Seats
+        {
             get
             {
                 return this.seats;
-            }
-            set
-            {
-                this.seats = value;
-            }
+            }         
         }
 
         public virtual ICollection<HallSchedule> HallSchedules
@@ -37,5 +42,6 @@ namespace MovieTheater.Models
                 this.hallSchedules = value;
             }
         }
+       
     }
 }

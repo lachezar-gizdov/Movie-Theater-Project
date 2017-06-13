@@ -23,8 +23,6 @@ namespace MovieTheater.Data.Contexts
 
         public IDbSet<Hall> Halls { get; set; }
 
-        public IDbSet<HallSchedule> HallShedules { get; set; }
-
-        public IDbSet<Seat> Seat { get; set; }
+        public IDbSet<HallSchedule> HallShedules { get; set; }        
     }
 }
