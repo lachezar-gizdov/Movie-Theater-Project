@@ -61,9 +61,17 @@ namespace MovieTheater.Models.Factory
             return hallSchedule;
         }
 
-        public Ticket CreateTicket()
+        public Ticket CreateTicket(int id, Movie movie, HallSchedule hallSchedule, decimal price, User user, int seat)
         {
-            Ticket ticket = new Ticket();
+            Ticket ticket = new Ticket()
+            {
+                Id = id,
+                Movie = movie,
+                HallSchedule = hallSchedule,
+                Price = price,
+                User = user,
+                Seat = seat
+            };
 
             return ticket;
         }

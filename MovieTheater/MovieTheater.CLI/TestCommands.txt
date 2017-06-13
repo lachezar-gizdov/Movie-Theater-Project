@@ -5,4 +5,7 @@ createhall 2 Arena
 createhall 15 Arena
 createschedule 1 2
 createuser Pesho Peshev Sofia Arena
+createmovie transoformers 2007 130 cameron
+createticket 1 transoformers 1 8 Pesho 7
 createpdfreport Ime
+readjson

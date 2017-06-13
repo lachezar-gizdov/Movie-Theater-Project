@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MovieTheater.Models
@@ -10,13 +9,14 @@ namespace MovieTheater.Models
 
         private short projectionTime;
 
-        public int Id { get; private set; }
+        [Required]
+        public int Id { get; set; }
 
         [Required]
-        public virtual Movie Movie { get; private set; }
+        public virtual Movie Movie { get; set; }
 
         [Required]
-        public virtual HallSchedule HallSchedule { get; private set; }
+        public virtual HallSchedule HallSchedule { get;  set; }
 
         // Projection time format: 1700 is the same as 17:00, 1115 is the same as 11:15, etc
         public short ProjectionTime
@@ -35,6 +35,7 @@ namespace MovieTheater.Models
             }
         }
 
+        [Required]
         public decimal Price
         {
             get
@@ -42,7 +43,7 @@ namespace MovieTheater.Models
                 return this.price;
             }
 
-            private set
+            set
             {
                 if (value <= 0)
                 {
@@ -54,9 +55,9 @@ namespace MovieTheater.Models
         }
 
         [Required]
-        public virtual User User { get; private set; }
+        public virtual User User { get; set; }
 
         [Required]
-        public virtual int Seat { get; private set; }
+        public virtual int Seat { get; set; }
     }
 }
