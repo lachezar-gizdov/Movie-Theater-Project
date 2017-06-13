@@ -99,6 +99,10 @@
     <Compile Include="MovieTheatherMigrationsSQLServer\201706130850165_Initialize SQL Server DB.Designer.cs">
       <DependentUpon>201706130850165_Initialize SQL Server DB.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieTheatherMigrationsSQLServer\201706131210318_hall property change.cs" />
+    <Compile Include="MovieTheatherMigrationsSQLServer\201706131210318_hall property change.Designer.cs">
+      <DependentUpon>201706131210318_hall property change.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieTheatherMigrationsSQLServer\MovieTheaterSQLServerConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieTheatherMigrationsSQLServer\201706130850165_Initialize SQL Server DB.resx">
       <DependentUpon>201706130850165_Initialize SQL Server DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieTheatherMigrationsSQLServer\201706131210318_hall property change.resx">
+      <DependentUpon>201706131210318_hall property change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
