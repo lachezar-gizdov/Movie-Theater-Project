@@ -6,7 +6,7 @@ using MovieTheater.Data.Contracts;
 using MovieTheater.Models.Factory.Contracts;
 using System.Linq;
 
-namespace MovieTheater.Framework.Core.Commands
+namespace MovieTheater.Framework.Core.Commands.CreateCommands
 {
     public class CreateHallScheduleCommand : MovieTheaterCommand, ICommand
     {

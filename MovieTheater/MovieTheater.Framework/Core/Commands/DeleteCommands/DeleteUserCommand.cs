@@ -6,7 +6,7 @@ using MovieTheater.Models.Factory.Contracts;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using System.Linq;
 
-namespace MovieTheater.Framework.Core.Commands
+namespace MovieTheater.Framework.Core.Commands.DeleteCommands
 {
     public class DeleteUserCommand : MovieTheaterCommand, ICommand
     {

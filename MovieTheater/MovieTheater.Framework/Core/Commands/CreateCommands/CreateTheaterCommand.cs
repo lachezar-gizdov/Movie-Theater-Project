@@ -6,11 +6,11 @@ using MovieTheater.Framework.Core.Commands.Abstractions;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Models.Factory.Contracts;
 
-namespace MovieTheater.Framework.Core.Commands
+namespace MovieTheater.Framework.Core.Commands.CreateCommands
 {
-    public class CreateUserCommand : MovieTheaterCommand, ICommand
+    public class CreateTheaterCommand : MovieTheaterCommand, ICommand
     {
-        public CreateUserCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) : 
+        public CreateTheaterCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) : 
             base(dbContext, modelsFactory)
         {
         }
@@ -19,25 +19,23 @@ namespace MovieTheater.Framework.Core.Commands
         {
             if (parameters.Any(x => x == string.Empty))
             {
-                throw new Exception("Some of the passed parameters are empty!");
+                throw new ArgumentException("Some of the passed parameters are empty!");
             }
 
-            var cityName = parameters[2];
-            var theaterName = parameters[3];
+            var cityName = parameters[1];
             var city = this.DbContext.Cities.FirstOrDefault(c => c.Name == cityName);
-
+           
             if (city == null)
             {
                 city = this.ModelsFactory.CreateCity(cityName);
             }
 
-            var theater = this.DbContext.Theaters.FirstOrDefault(t => t.Name == theaterName);
+            var theater = this.ModelsFactory.CreateTheater(parameters[0], city);
 
-            var user = this.ModelsFactory.CreateUser(parameters[0], parameters[1], city);
-            this.DbContext.Users.Add(user);
+            this.DbContext.Theaters.Add(theater);
             this.DbContext.SaveChanges();
 
-            return $"Successfully created a new User with ID {user.Id}!";
+            return $"Successfully created a new Theater with ID {theater.Id}!";
         }
     }
 }
