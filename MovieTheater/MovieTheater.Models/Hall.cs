@@ -18,7 +18,7 @@ namespace MovieTheater.Models
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Number { get; set; }
 
         [Required]
         public Theater Theater { get; set; }
