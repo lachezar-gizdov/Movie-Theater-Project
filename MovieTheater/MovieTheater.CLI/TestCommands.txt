@@ -1,7 +1,7 @@
 ﻿createtheater Arena Sofia
 createtheater CinemaCity Sofia
 createtheater Arena Varna
-createhall 2 Arena
+createhall 2 20 Arena
 createhall 15 Arena
 createschedule 1 2
 createuser Pesho Peshev Sofia Arena

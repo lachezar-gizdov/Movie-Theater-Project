@@ -36,12 +36,13 @@ namespace MovieTheater.Models.Factory
             return movie;
         }
 
-        public Hall CreateHall(string number, Theater theater)
+        public Hall CreateHall(string number, string seats, Theater theater)
         {
             Hall hall = new Hall()
             {
-                Number = number,
-                Theater = theater
+                HallNumber = number,
+                Theater = theater,
+                Seats = int.Parse(seats)
             };
 
             return hall;

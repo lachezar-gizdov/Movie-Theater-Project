@@ -6,7 +6,7 @@ namespace MovieTheater.Models
 { 
     public class Hall
     {
-        private readonly int seats;
+        private int seats;
         private ICollection<HallSchedule> hallSchedules;  
 
         public Hall()
@@ -18,7 +18,7 @@ namespace MovieTheater.Models
         public int Id { get; set; }
 
         [Required]
-        public string Number { get; set; }
+        public string HallNumber { get; set; }
 
         [Required]
         public virtual Theater Theater { get; set; }
@@ -28,7 +28,12 @@ namespace MovieTheater.Models
             get
             {
                 return this.seats;
-            }         
+            }
+
+            set
+            {
+                this.seats = value;
+            }
         }
 
         public virtual ICollection<HallSchedule> HallSchedules

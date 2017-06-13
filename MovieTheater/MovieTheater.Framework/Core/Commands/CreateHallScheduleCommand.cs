@@ -24,7 +24,7 @@ namespace MovieTheater.Framework.Core.Commands
 
             var hallScheduleNumber = parameters[0];
             var hallNumber = parameters[1];
-            var hall = this.DbContext.Halls.FirstOrDefault(t => t.Number == hallNumber);
+            var hall = this.DbContext.Halls.FirstOrDefault(t => t.HallNumber == hallNumber);
 
             if (hall == null)
             {

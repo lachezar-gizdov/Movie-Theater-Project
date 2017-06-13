@@ -23,7 +23,8 @@ namespace MovieTheater.Framework.Core.Commands
             }
 
             var hallNumber = parameters[0];
-            var theaterName = parameters[1];
+            var theaterName = parameters[2];
+            var seats = parameters[1];
             var theater = this.DbContext.Theaters.FirstOrDefault(t => t.Name == theaterName);
 
             if (theater == null)
@@ -31,14 +32,14 @@ namespace MovieTheater.Framework.Core.Commands
                 throw new ArgumentException("This Theater does not exist!");
             }
 
-            var hall = this.DbContext.Halls.FirstOrDefault(h => h.Number == hallNumber);
+            var hall = this.DbContext.Halls.FirstOrDefault(h => h.HallNumber == hallNumber);
 
             if (hall != null)
             {
                 throw new ArgumentException("This hall exist!");
             }
 
-            var newHall = this.ModelsFactory.CreateHall(hallNumber, theater);
+            var newHall = this.ModelsFactory.CreateHall(hallNumber, seats, theater);
             this.DbContext.Halls.Add(newHall);
             this.DbContext.SaveChanges();
 

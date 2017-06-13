@@ -48,7 +48,7 @@ namespace MovieTheater.Framework.Core
                     var executionResult = this.commandParser.Process(fullCommand);
                     this.writer.Write(executionResult);
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
                     this.writer.Write(ex.Message);
                 }
