@@ -56,7 +56,9 @@ namespace MovieTheater.Framework.Core.Commands
                 case "createticket":
                     return new CreateTicketCommand(this.dbContext, this.modelsFactory);
                 case "createpdfreport":
-                    return new CreatePdfReportCommand(this.dbContext, this.modelsFactory, this.exporter);             
+                    return new CreatePdfReportCommand(this.dbContext, this.modelsFactory, this.exporter);
+                case "deleteuser":
+                    return new DeleteUserCommand(this.dbContext, this.modelsFactory);
                 case "readjson":
                     return new CreateJsonReaderCommand(this.fileProviderFactory, this.dbContext, this.modelsFactory);
                 default:
