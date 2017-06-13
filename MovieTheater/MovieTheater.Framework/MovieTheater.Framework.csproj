@@ -57,6 +57,7 @@
     <Compile Include="Core\Commands\CreateCommands\CreateStaffMember.cs" />
     <Compile Include="Core\Commands\CreateCommands\CreateHallScheduleCommand.cs" />
     <Compile Include="Core\Commands\DeleteCommands\DeleteUserCommand.cs" />
+    <Compile Include="Core\Commands\UpdateCommands\UpdateTheaterNameCommand.cs" />
     <Compile Include="Core\Providers\Contracts\IFileProviderFactory.cs" />
     <Compile Include="Common\Contracts\IExporter.cs" />
     <Compile Include="Common\Contracts\IParser.cs" />
