@@ -1,0 +1,28 @@
+{
+    "name": "Cinema",
+    "city": {
+        "name": "Varna"
+    },
+    "users": [{
+            "firstname": "Gosho",
+            "lastname": "Goshev",
+            "city": {
+                "name": "Varna"
+            }
+        },
+        {
+            "firstname": "Pesho",
+            "lastname": "Peshev",
+            "city": {
+                "name": "Plovdiv"
+            }
+        },
+        {
+            "firstname": "Rangel",
+            "lastname": "Tutkov",
+            "city": {
+                "name": "Varna"
+            }
+        }
+    ]
+}

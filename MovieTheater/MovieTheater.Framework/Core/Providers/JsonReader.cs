@@ -17,10 +17,11 @@ namespace MovieTheater.Framework.Core.Providers
 
         public string Read()
         {
-            this.Writer.Write("Enter path of JSON file:");
-            string path = this.Reader.Read();
+            //this.Writer.Write("Enter path of JSON file:");
+            //string path = this.Reader.Read();
+            var path = @"C:/Users/Encho/Desktop/Movie-Theater-Project/MovieTheater/MovieTheater.Framework/Core/Providers/JsonTestFile/jfile.json";
 
-            StreamReader readJson = new StreamReader($@"{path}");
+            StreamReader readJson = new StreamReader(path);
             string jsonString = readJson.ReadToEnd();
 
             return jsonString;
