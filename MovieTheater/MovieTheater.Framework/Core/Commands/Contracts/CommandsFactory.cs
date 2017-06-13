@@ -15,20 +15,25 @@ namespace MovieTheater.Framework.Core.Commands
         private const string ModelsFactoryCheck = "Commands Factory Models Factory";
         private const string ExporterCheck = "Commands Factory Exporter";
         private const string FileProviderFactoryCheck = "Commands Factory File Provider Factory";
-        private readonly IMovieTheaterDbContext dbContext;
+        private readonly IMovieTheaterDbContext moviesDbContext;
+        private readonly IStaffDbContext staffDbContext;
+        private readonly IShopDbContext shopDbContext;
         private readonly IModelsFactory modelsFactory;
         private readonly IExporter exporter;
         private IFileProviderFactory fileProviderFactory;
 
-        public CommandsFactory(IMovieTheaterDbContext dbContext, IModelsFactory factory, IExporter exporter, IFileProviderFactory fileProviderFactory)
+        public CommandsFactory(IMovieTheaterDbContext movieDbContext, IStaffDbContext staffDbContext, IShopDbContext shopDbContext,
+            IModelsFactory factory, IExporter exporter, IFileProviderFactory fileProviderFactory)
         {
-            Guard.WhenArgument(dbContext, DbContextCheck).IsNull().Throw();
+            Guard.WhenArgument(movieDbContext, DbContextCheck).IsNull().Throw();
             Guard.WhenArgument(factory, ModelsFactoryCheck).IsNull().Throw();
             Guard.WhenArgument(exporter, ExporterCheck).IsNull().Throw();
             Guard.WhenArgument(fileProviderFactory, FileProviderFactoryCheck).IsNull().Throw();
 
-            this.dbContext = dbContext;
+            this.moviesDbContext = movieDbContext;
             this.modelsFactory = factory;
+            this.staffDbContext = staffDbContext;
+            this.shopDbContext = shopDbContext;
             this.exporter = exporter;
             this.fileProviderFactory = fileProviderFactory;
         }
@@ -40,27 +45,31 @@ namespace MovieTheater.Framework.Core.Commands
             switch (command)
             {
                 case "intro":
-                    return new DisplayIntroTextCommand(this.dbContext, this.modelsFactory);
+                    return new DisplayIntroTextCommand(this.moviesDbContext, this.modelsFactory);
                 case "help":
-                    return new DisplayHelpCommand(this.dbContext, this.modelsFactory);
+                    return new DisplayHelpCommand(this.moviesDbContext, this.modelsFactory);
                 case "createtheater":
-                    return new CreateTheaterCommand(this.dbContext, this.modelsFactory);
+                    return new CreateTheaterCommand(this.moviesDbContext, this.modelsFactory);
                 case "createhall":
-                    return new CreateHallCommand(this.dbContext, this.modelsFactory);
+                    return new CreateHallCommand(this.moviesDbContext, this.modelsFactory);
                 case "createschedule":
-                    return new CreateHallScheduleCommand(this.dbContext, this.modelsFactory);
+                    return new CreateHallScheduleCommand(this.moviesDbContext, this.modelsFactory);
                 case "createmovie":
-                    return new CreateMovieCommand(this.dbContext, this.modelsFactory);
+                    return new CreateMovieCommand(this.moviesDbContext, this.modelsFactory);
                 case "createuser":
-                    return new CreateUserCommand(this.dbContext, this.modelsFactory);
+                    return new CreateUserCommand(this.moviesDbContext, this.modelsFactory);
                 case "createticket":
-                    return new CreateTicketCommand(this.dbContext, this.modelsFactory);
+                    return new CreateTicketCommand(this.moviesDbContext, this.modelsFactory);
                 case "createpdfreport":
-                    return new CreatePdfReportCommand(this.dbContext, this.modelsFactory, this.exporter);
+                    return new CreatePdfReportCommand(this.moviesDbContext, this.modelsFactory, this.exporter);
                 case "deleteuser":
-                    return new DeleteUserCommand(this.dbContext, this.modelsFactory);
+                    return new DeleteUserCommand(this.moviesDbContext, this.modelsFactory);
                 case "readjson":
-                    return new CreateJsonReaderCommand(this.fileProviderFactory, this.dbContext, this.modelsFactory);
+                    return new CreateJsonReaderCommand(this.fileProviderFactory, this.moviesDbContext, this.modelsFactory);
+                case "createstaffmember":
+                    return new CreateStaffMember(this.staffDbContext, this.modelsFactory);
+                case "createshop":
+                    return new CreateShopCommand(this.shopDbContext, this.modelsFactory);
                 default:
                     throw new ArgumentException("The passed command is not valid!");
             }

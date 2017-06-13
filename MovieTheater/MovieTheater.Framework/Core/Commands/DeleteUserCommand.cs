@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace MovieTheater.Framework.Core.Commands
 {
-    public class DeleteUserCommand : Command, ICommand
+    public class DeleteUserCommand : MovieTheaterCommand, ICommand
     {
         public DeleteUserCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) : base(dbContext, modelsFactory)
         {

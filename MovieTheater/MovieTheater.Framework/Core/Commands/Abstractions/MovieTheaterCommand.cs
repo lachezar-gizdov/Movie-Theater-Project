@@ -6,14 +6,14 @@ using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands.Abstractions
 {
-    public abstract class Command : ICommand
+    public abstract class MovieTheaterCommand : ICommand
     {
         protected readonly IMovieTheaterDbContext DbContext;
         protected readonly IModelsFactory ModelsFactory;
         private const string DbContextCheck = "Commands Factory DbContext";
         private const string ModelsFactoryCheck = "Commands Factory Models Factory";
 
-        public Command(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory)
+        public MovieTheaterCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory)
         {
             Guard.WhenArgument(dbContext, DbContextCheck).IsNull().Throw();
             Guard.WhenArgument(modelsFactory, ModelsFactoryCheck).IsNull().Throw();

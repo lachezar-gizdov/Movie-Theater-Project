@@ -4,6 +4,7 @@ using MovieTheater.Framework.Common;
 using MovieTheater.Framework.Common.Contracts;
 using MovieTheater.Framework.Core;
 using MovieTheater.Framework.Core.Commands;
+using MovieTheater.Framework.Core.Commands.Abstractions;
 using MovieTheater.Framework.Core.Commands.Contracts;
 using MovieTheater.Framework.Core.Contracts;
 using MovieTheater.Framework.Core.Providers;
@@ -28,7 +29,9 @@ namespace MovieTheater.CLI.NinjectModules
             this.Bind<ICommandsFactory>().To<CommandsFactory>();
             this.Bind<IParser>().To<CommandParser>();
             this.Bind<IEngine>().To<Engine>();
-            this.Bind<IMovieTheaterDbContext>().To<MovieTheaterDbContext>();
+            this.Bind<IMovieTheaterDbContext>().To<MovieTheaterDbContextSQLServer>();
+            this.Bind<IStaffDbContext>().To<MovieTheaterDbContextPostgre>();
+            this.Bind<IShopDbContext>().To<MovieTheaterDbContextLite>();
         }
     }
 }

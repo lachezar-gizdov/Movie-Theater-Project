@@ -7,7 +7,7 @@ using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
-    public class CreateJsonReaderCommand : Command, ICommand
+    public class CreateJsonReaderCommand : MovieTheaterCommand, ICommand
     {
         private IFileProviderFactory fileProviderFactory;
 

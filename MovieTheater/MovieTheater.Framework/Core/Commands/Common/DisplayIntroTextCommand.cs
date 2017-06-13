@@ -6,7 +6,7 @@ using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands.Common
 {
-    public class DisplayIntroTextCommand : Command, ICommand
+    public class DisplayIntroTextCommand : MovieTheaterCommand, ICommand
     {
         public DisplayIntroTextCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) : 
             base(dbContext, modelsFactory)

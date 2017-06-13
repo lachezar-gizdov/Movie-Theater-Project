@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace MovieTheater.Framework.Core.Commands
 {
-    public class CreateHallScheduleCommand : Command, ICommand
+    public class CreateHallScheduleCommand : MovieTheaterCommand, ICommand
     {
         public CreateHallScheduleCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) 
             : base(dbContext, modelsFactory)

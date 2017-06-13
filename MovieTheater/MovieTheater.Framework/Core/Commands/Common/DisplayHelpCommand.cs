@@ -7,7 +7,7 @@ using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands.Common
 {
-    public class DisplayHelpCommand : Command, ICommand
+    public class DisplayHelpCommand : MovieTheaterCommand, ICommand
     {
         public DisplayHelpCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) : 
             base(dbContext, modelsFactory)

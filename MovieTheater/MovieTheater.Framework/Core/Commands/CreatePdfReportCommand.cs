@@ -9,7 +9,7 @@ using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
-    public class CreatePdfReportCommand : Command, ICommand
+    public class CreatePdfReportCommand : MovieTheaterCommand, ICommand
     {
         private readonly IExporter exporter;
 

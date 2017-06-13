@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
 using MovieTheater.CLI.NinjectModules;
 using MovieTheater.Data.Contexts;
-using MovieTheater.Data.Migrations;
 using MovieTheater.Framework.Core.Contracts;
 using Ninject;
 
@@ -11,7 +10,7 @@ namespace MovieTheater.CLI
     {
         public static void Main()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContext, Configuration>());
 
             // TODO: Not working at this point
             // Database.SetInitializer(new MigrateDatabaseToLatestVersion<MovieTheaterDbContextLite, ConfigurationLite>());

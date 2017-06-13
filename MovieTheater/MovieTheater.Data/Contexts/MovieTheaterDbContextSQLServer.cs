@@ -4,10 +4,10 @@ using MovieTheater.Models;
 
 namespace MovieTheater.Data.Contexts
 {
-    public class MovieTheaterDbContext : DbContext, IMovieTheaterDbContext
+    public class MovieTheaterDbContextSQLServer : DbContext, IMovieTheaterDbContext
     {
-        public MovieTheaterDbContext()
-            : base("MovieTheater")
+        public MovieTheaterDbContextSQLServer()
+            : base("MovieTheaterSQLServer")
         {
         }
 

@@ -8,7 +8,7 @@ using MovieTheater.Models.Factory.Contracts;
 
 namespace MovieTheater.Framework.Core.Commands
 {
-    public class CreateTheaterCommand : Command, ICommand
+    public class CreateTheaterCommand : MovieTheaterCommand, ICommand
     {
         public CreateTheaterCommand(IMovieTheaterDbContext dbContext, IModelsFactory modelsFactory) : 
             base(dbContext, modelsFactory)

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using MovieTheater.Models.Factory.Contracts;
+﻿using MovieTheater.Models.Factory.Contracts;
+using System.Collections.Generic;
 
 namespace MovieTheater.Models.Factory
 {
@@ -8,21 +8,18 @@ namespace MovieTheater.Models.Factory
         public Theater CreateTheater(string theaterName, City city)
         {
             Theater theater = new Theater() { Name = theaterName, City = city };
-
             return theater;
         }
-
+        
         public Theater CreateTheater(string theaterName, City city, ICollection<User> users)
         {
             Theater theater = new Theater() { Name = theaterName, City = city, Users = users };
-
             return theater;
         }
 
         public City CreateCity(string cityName)
         {
             City city = new City() { Name = cityName };
-
             return city;
         }
 
@@ -79,8 +76,19 @@ namespace MovieTheater.Models.Factory
         public User CreateUser(string firstName, string lastName, City city)
         {
             User user = new User() { FirstName = firstName, LastName = lastName, City = city };
-
             return user;
+        }
+
+        public FoodShop CreateShop(string name)
+        {
+            var shop = new FoodShop { Name = name };
+            return shop;
+        }
+
+        public StaffMember CreateStaffMember(string firstName, string LastName, Department department)
+        {
+            var staffMember = new StaffMember { FirstName = firstName, LastName = LastName, Department = department };
+            return staffMember;
         }
     }
 }

@@ -45,12 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="City.cs" />
+    <Compile Include="Department.cs" />
     <Compile Include="Factory\Contracts\IModelsFactory.cs" />
+    <Compile Include="Food.cs" />
     <Compile Include="FoodShop.cs" />
     <Compile Include="Hall.cs" />
     <Compile Include="HallSchedule.cs" />
     <Compile Include="Factory\ModelsFactory.cs" />
     <Compile Include="Movie.cs" />
+    <Compile Include="StaffMember.cs" />
     <Compile Include="Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
